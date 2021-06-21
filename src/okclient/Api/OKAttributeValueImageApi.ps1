@@ -104,9 +104,7 @@ function Get-OK {
             $LocalVarQueryParameters['index'] = $Index
         }
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 

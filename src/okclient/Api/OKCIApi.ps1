@@ -185,9 +185,7 @@ function Get-OKCIByID {
         }
         $LocalVarQueryParameters['CIID'] = $CIID
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -304,9 +302,7 @@ function Get-OKCIsByID {
         }
         $LocalVarQueryParameters['CIIDs'] = $CIIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 

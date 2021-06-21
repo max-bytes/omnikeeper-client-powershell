@@ -87,9 +87,7 @@ function Get-OKAllMergedRelations {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -228,9 +226,7 @@ function Get-OKMergedRelation {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -347,9 +343,7 @@ function Get-OKMergedRelationsFromOrToCI {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -466,9 +460,7 @@ function Get-OKMergedRelationsOutgoingFromCI {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -585,9 +577,7 @@ function Get-OKMergedRelationsWithPredicate {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 

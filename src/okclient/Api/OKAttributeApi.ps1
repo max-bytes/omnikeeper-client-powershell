@@ -186,18 +186,14 @@ function Find-OKMergedAttributesByName {
         }
         $LocalVarQueryParameters['regex'] = $Regex
 
-        if ($Ciids) {
-            $LocalVarQueryParameters['ciids'] = $Ciids
-        }
+        $LocalVarQueryParameters['ciids'] = $Ciids
 
         if (!$LayerIDs) {
             throw "Error! The required parameter `LayerIDs` missing when calling findMergedAttributesByName."
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -325,9 +321,7 @@ function Get-OKMergedAttribute {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -444,9 +438,7 @@ function Get-OKMergedAttributes {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 
@@ -563,9 +555,7 @@ function Get-OKMergedAttributesWithName {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 

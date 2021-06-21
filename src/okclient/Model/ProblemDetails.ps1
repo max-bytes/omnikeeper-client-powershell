@@ -24,6 +24,8 @@ No description available.
 No description available.
 .PARAMETER Instance
 No description available.
+.PARAMETER Extensions
+No description available.
 .OUTPUTS
 
 ProblemDetails<PSCustomObject>
@@ -46,7 +48,10 @@ function Initialize-OKProblemDetails {
         ${Detail},
         [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${Instance}
+        ${Instance},
+        [Parameter(Position = 5, ValueFromPipelineByPropertyName = $true)]
+        [System.Collections.Hashtable]
+        ${Extensions}
     )
 
     Process {
@@ -60,6 +65,7 @@ function Initialize-OKProblemDetails {
             "status" = ${Status}
             "detail" = ${Detail}
             "instance" = ${Instance}
+            "extensions" = ${Extensions}
         }
 
 
@@ -97,7 +103,7 @@ function ConvertFrom-OKJsonToProblemDetails {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKProblemDetails
-        $AllProperties = ("type", "title", "status", "detail", "instance")
+        $AllProperties = ("type", "title", "status", "detail", "instance", "extensions")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -134,12 +140,19 @@ function ConvertFrom-OKJsonToProblemDetails {
             $Instance = $JsonParameters.PSobject.Properties["instance"].value
         }
 
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "extensions"))) { #optional property not found
+            $Extensions = $null
+        } else {
+            $Extensions = $JsonParameters.PSobject.Properties["extensions"].value
+        }
+
         $PSO = [PSCustomObject]@{
             "type" = ${Type}
             "title" = ${Title}
             "status" = ${Status}
             "detail" = ${Detail}
             "instance" = ${Instance}
+            "extensions" = ${Extensions}
         }
 
         return $PSO

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Status** | **Int32** |  | [optional] 
 **Detail** | **String** |  | [optional] 
 **Instance** | **String** |  | [optional] 
+**Extensions** | [**System.Collections.Hashtable**](SystemCollectionsHashtable.md) |  | [optional] [readonly] 
 
 ## Examples
 
@@ -17,7 +18,8 @@ $ProblemDetails = Initialize-okclientProblemDetails  -Type null `
  -Title null `
  -Status null `
  -Detail null `
- -Instance null
+ -Instance null `
+ -Extensions null
 ```
 
 - Convert the resource to JSON

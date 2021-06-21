@@ -98,9 +98,7 @@ function Get-OKEffectiveTraitsForTraitName {
         }
         $LocalVarQueryParameters['traitName'] = $TraitName
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 

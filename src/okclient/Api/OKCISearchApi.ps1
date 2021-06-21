@@ -109,9 +109,7 @@ function Search-OKCIsByTraits {
         }
         $LocalVarQueryParameters['withoutTraits'] = $WithoutTraits
 
-        if ($AtTime) {
-            $LocalVarQueryParameters['atTime'] = $AtTime
-        }
+        $LocalVarQueryParameters['atTime'] = $AtTime
 
 
 

@@ -1,6 +1,6 @@
 # okclient.okclient/Api.OKCIApi
 
-All URIs are relative to *https://localhost:44378*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
