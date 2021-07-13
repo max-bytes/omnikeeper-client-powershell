@@ -26,11 +26,11 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
+$Version = "MyVersion" # String | 
 
 # list of all CI-IDs
 try {
-     $Result = Get-OKAllCIIDs -Version $Version
+    $Result = Get-OKAllCIIDs -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKAllCIIDs: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -78,14 +78,14 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = @(123) # Int64[] | Specifies which layers contribute to the result, and in which order
-$CIID = "CIID_example" # String | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
+$LayerIDs = 0 # Int64[] | Specifies which layers contribute to the result, and in which order
+$CIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
 
 # single CI by CI-ID
 try {
-     $Result = Get-OKCIByID -LayerIDs $LayerIDs -CIID $CIID -Version $Version -AtTime $AtTime
+    $Result = Get-OKCIByID -LayerIDs $LayerIDs -CIID $CIID -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKCIByID: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -136,14 +136,14 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = @(123) # Int64[] | Specifies which layers contribute to the result, and in which order
-$CIIDs = @("Inner_example") # String[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
+$LayerIDs = 0 # Int64[] | Specifies which layers contribute to the result, and in which order
+$CIIDs = "MyCIIDs" # String[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
 
 # multiple CIs by CI-ID  !Watch out for the query URL getting too long because of a lot of CIIDs!  TODO: consider using POST
 try {
-     $Result = Get-OKCIsByID -LayerIDs $LayerIDs -CIIDs $CIIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKCIsByID -LayerIDs $LayerIDs -CIIDs $CIIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKCIsByID: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

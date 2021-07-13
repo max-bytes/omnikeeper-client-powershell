@@ -27,13 +27,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = @(123) # Int64[] | 
-$TraitName = "TraitName_example" # String | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$LayerIDs = 0 # Int64[] | 
+$TraitName = "MyTraitName" # String | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKEffectiveTraitsForTraitName -LayerIDs $LayerIDs -TraitName $TraitName -Version $Version -AtTime $AtTime
+    $Result = Get-OKEffectiveTraitsForTraitName -LayerIDs $LayerIDs -TraitName $TraitName -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKEffectiveTraitsForTraitName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

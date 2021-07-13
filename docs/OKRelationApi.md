@@ -30,12 +30,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKAllMergedRelations -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKAllMergedRelations -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKAllMergedRelations: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -87,15 +87,15 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$FromCIID = "FromCIID_example" # String | 
-$ToCIID = "ToCIID_example" # String | 
-$PredicateID = "PredicateID_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$FromCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$ToCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$PredicateID = "MyPredicateID" # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKMergedRelation -FromCIID $FromCIID -ToCIID $ToCIID -PredicateID $PredicateID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKMergedRelation -FromCIID $FromCIID -ToCIID $ToCIID -PredicateID $PredicateID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKMergedRelation: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -148,13 +148,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = "Ciid_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKMergedRelationsFromOrToCI -Ciid $Ciid -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKMergedRelationsFromOrToCI -Ciid $Ciid -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKMergedRelationsFromOrToCI: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -205,13 +205,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$FromCIID = "FromCIID_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$FromCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKMergedRelationsOutgoingFromCI -FromCIID $FromCIID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKMergedRelationsOutgoingFromCI -FromCIID $FromCIID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKMergedRelationsOutgoingFromCI: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -262,13 +262,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$PredicateID = "PredicateID_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$PredicateID = "MyPredicateID" # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKMergedRelationsWithPredicate -PredicateID $PredicateID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKMergedRelationsWithPredicate -PredicateID $PredicateID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKMergedRelationsWithPredicate: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

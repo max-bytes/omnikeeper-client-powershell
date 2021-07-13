@@ -83,6 +83,3 @@ src/okclient/Private/OKRSAEncryptionProvider.cs
 src/okclient/Private/Out-DebugParameter.ps1
 src/okclient/en-US/about_okclient.help.txt
 src/okclient/okclient.psm1
-tests/Api/OKActiveDirectoryXMLIngestApi.Tests.ps1
-tests/Api/OKAnsibleInventoryScanIngestApi.Tests.ps1
-tests/Model/AnsibleInventoryScanDTO.Tests.ps1

@@ -30,15 +30,15 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = "Ciid_example" # String | 
-$AttributeName = "AttributeName_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$Index = 987 # Int32 |  (optional) (default to 0)
-$AtTime = Get-Date # System.DateTime |  (optional)
+$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$AttributeName = "MyAttributeName" # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$Index = 56 # Int32 |  (optional) (default to 0)
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OK -Ciid $Ciid -AttributeName $AttributeName -LayerIDs $LayerIDs -Version $Version -Index $Index -AtTime $AtTime
+    $Result = Get-OK -Ciid $Ciid -AttributeName $AttributeName -LayerIDs $LayerIDs -Version $Version -Index $Index -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -93,15 +93,15 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = "Ciid_example" # String | 
-$AttributeName = "AttributeName_example" # String | 
-$LayerID = 987 # Int64 | 
-$Version = "Version_example" # String | 
-$Files = @(123) # System.IO.FileInfo[] | 
-$ForceArray = true # Boolean |  (optional) (default to $false)
+$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$AttributeName = "MyAttributeName" # String | 
+$LayerID = 789 # Int64 | 
+$Version = "MyVersion" # String | 
+$Files =  # System.IO.FileInfo[] | 
+$ForceArray = $true # Boolean |  (optional) (default to $false)
 
 try {
-     $Result = Submit-OK -Ciid $Ciid -AttributeName $AttributeName -LayerID $LayerID -Version $Version -Files $Files -ForceArray $ForceArray
+    $Result = Submit-OK -Ciid $Ciid -AttributeName $AttributeName -LayerID $LayerID -Version $Version -Files $Files -ForceArray $ForceArray
 } catch {
     Write-Host ("Exception occured when calling Submit-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

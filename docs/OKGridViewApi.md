@@ -32,12 +32,15 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
-$AddContextRequest = (Initialize-AddContextRequest -Name "Name_example" -SpeakingName "SpeakingName_example" -Description "Description_example" -Configuration (Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer 123 -ReadLayerset @(123) -Columns @((Initialize-GridViewColumn -SourceAttributeName "SourceAttributeName_example" -ColumnDescription "ColumnDescription_example" -ValueType (Initialize-AttributeValueType ) -WriteLayer 123)) -Trait "Trait_example")) # AddContextRequest |  (optional)
+$Version = "MyVersion" # String | 
+$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer 0
+$GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer 0 -ReadLayerset 0 -Columns $GridViewColumn -Trait "MyTrait"
+
+$AddContextRequest = Initialize-AddContextRequest -Name "MyName" -SpeakingName "MySpeakingName" -Description "MyDescription" -Configuration $GridViewConfiguration # AddContextRequest |  (optional)
 
 # Adds new context
 try {
-     $Result = Add-OKContext -Version $Version -AddContextRequest $AddContextRequest
+    $Result = Add-OKContext -Version $Version -AddContextRequest $AddContextRequest
 } catch {
     Write-Host ("Exception occured when calling Add-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -85,13 +88,18 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Context = "Context_example" # String | 
-$Version = "Version_example" # String | 
-$ChangeDataRequest = (Initialize-ChangeDataRequest -SparseRows @((Initialize-SparseRow -Ciid "Ciid_example" -Cells @((Initialize-ChangeDataCell -Name "Name_example" -Value (Initialize-AttributeValueDTO -Type (Initialize-AttributeValueType ) -IsArray $false -Values @("Values_example")) -Changeable $false))))) # ChangeDataRequest |  (optional)
+$Context = "MyContext" # String | 
+$Version = "MyVersion" # String | 
+$AttributeValueDTO = Initialize-AttributeValueDTO -Type "Text" -IsArray $false -Values "MyValues"
+$ChangeDataCell = Initialize-ChangeDataCell -Name "MyName" -Value $AttributeValueDTO -Changeable $false
+
+$SparseRow = Initialize-SparseRow -Ciid "MyCiid" -Cells $ChangeDataCell
+
+$ChangeDataRequest = Initialize-ChangeDataRequest -SparseRows $SparseRow # ChangeDataRequest |  (optional)
 
 # Saves grid view row changes and returns change results
 try {
-     $Result = Rename-OKData -Context $Context -Version $Version -ChangeDataRequest $ChangeDataRequest
+    $Result = Rename-OKData -Context $Context -Version $Version -ChangeDataRequest $ChangeDataRequest
 } catch {
     Write-Host ("Exception occured when calling Rename-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -139,12 +147,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Name = "Name_example" # String | 
-$Version = "Version_example" # String | 
+$Name = "MyName" # String | 
+$Version = "MyVersion" # String | 
 
 # Deletes specific context
 try {
-     $Result = Invoke-OKDeleteContext -Name $Name -Version $Version
+    $Result = Invoke-OKDeleteContext -Name $Name -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Invoke-OKDeleteContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -192,13 +200,16 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Name = "Name_example" # String | 
-$Version = "Version_example" # String | 
-$EditContextRequest = (Initialize-EditContextRequest -SpeakingName "SpeakingName_example" -Description "Description_example" -Configuration (Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer 123 -ReadLayerset @(123) -Columns @((Initialize-GridViewColumn -SourceAttributeName "SourceAttributeName_example" -ColumnDescription "ColumnDescription_example" -ValueType  -WriteLayer 123)) -Trait "Trait_example")) # EditContextRequest |  (optional)
+$Name = "MyName" # String | 
+$Version = "MyVersion" # String | 
+$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer 0
+$GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer 0 -ReadLayerset 0 -Columns $GridViewColumn -Trait "MyTrait"
+
+$EditContextRequest = Initialize-EditContextRequest -SpeakingName "MySpeakingName" -Description "MyDescription" -Configuration $GridViewConfiguration # EditContextRequest |  (optional)
 
 # Edits specific context
 try {
-     $Result = Edit-OKContext -Name $Name -Version $Version -EditContextRequest $EditContextRequest
+    $Result = Edit-OKContext -Name $Name -Version $Version -EditContextRequest $EditContextRequest
 } catch {
     Write-Host ("Exception occured when calling Edit-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -246,12 +257,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Name = "Name_example" # String | 
-$Version = "Version_example" # String | 
+$Name = "MyName" # String | 
+$Version = "MyVersion" # String | 
 
 # Returns a single context in full
 try {
-     $Result = Get-OKContext -Name $Name -Version $Version
+    $Result = Get-OKContext -Name $Name -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -297,11 +308,11 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
+$Version = "MyVersion" # String | 
 
 # Returns a list of contexts for grid view.
 try {
-     $Result = Get-OKContexts -Version $Version
+    $Result = Get-OKContexts -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -347,12 +358,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Context = "Context_example" # String | 
-$Version = "Version_example" # String | 
+$Context = "MyContext" # String | 
+$Version = "MyVersion" # String | 
 
 # Returns grid view data for specific context
 try {
-     $Result = Get-OKData -Context $Context -Version $Version
+    $Result = Get-OKData -Context $Context -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -399,12 +410,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Context = "Context_example" # String | 
-$Version = "Version_example" # String | 
+$Context = "MyContext" # String | 
+$Version = "MyVersion" # String | 
 
 # Returns grid view schema for specific context
 try {
-     $Result = Get-OKSchema -Context $Context -Version $Version
+    $Result = Get-OKSchema -Context $Context -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKSchema: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

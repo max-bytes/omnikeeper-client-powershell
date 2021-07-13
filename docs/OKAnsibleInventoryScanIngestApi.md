@@ -27,13 +27,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$WriteLayerID = 987 # Int64 | 
-$SearchLayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AnsibleInventoryScanDTO = (Initialize-AnsibleInventoryScanDTO -SetupFacts "TODO" -YumInstalled "TODO" -YumRepos "TODO" -YumUpdates "TODO") # AnsibleInventoryScanDTO | 
+$WriteLayerID = 789 # Int64 | 
+$SearchLayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AnsibleInventoryScanDTO = Initialize-AnsibleInventoryScanDTO -SetupFacts @{ key_example =  } -YumInstalled @{ key_example =  } -YumRepos @{ key_example =  } -YumUpdates @{ key_example =  } # AnsibleInventoryScanDTO | 
 
 try {
-     $Result = ConvertTo-OKgestAnsibleInventoryScan -WriteLayerID $WriteLayerID -SearchLayerIDs $SearchLayerIDs -Version $Version -AnsibleInventoryScanDTO $AnsibleInventoryScanDTO
+    $Result = ConvertTo-OKgestAnsibleInventoryScan -WriteLayerID $WriteLayerID -SearchLayerIDs $SearchLayerIDs -Version $Version -AnsibleInventoryScanDTO $AnsibleInventoryScanDTO
 } catch {
     Write-Host ("Exception occured when calling ConvertTo-OKgestAnsibleInventoryScan: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

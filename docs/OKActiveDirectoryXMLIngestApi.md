@@ -27,13 +27,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
-$WriteLayerID = 987 # Int64 | 
-$SearchLayerIDs = @(123) # Int64[] | 
-$Files = @(123) # System.IO.FileInfo[] | 
+$Version = "MyVersion" # String | 
+$WriteLayerID = 789 # Int64 | 
+$SearchLayerIDs = 0 # Int64[] | 
+$Files =  # System.IO.FileInfo[] | 
 
 try {
-     $Result = ConvertTo-OKgestXML -Version $Version -WriteLayerID $WriteLayerID -SearchLayerIDs $SearchLayerIDs -Files $Files
+    $Result = ConvertTo-OKgestXML -Version $Version -WriteLayerID $WriteLayerID -SearchLayerIDs $SearchLayerIDs -Files $Files
 } catch {
     Write-Host ("Exception occured when calling ConvertTo-OKgestXML: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

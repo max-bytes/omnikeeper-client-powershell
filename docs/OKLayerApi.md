@@ -26,11 +26,11 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
+$Version = "MyVersion" # String | 
 
 # list of all layers
 try {
-     $Result = Get-OKAllLayers -Version $Version
+    $Result = Get-OKAllLayers -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKAllLayers: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -76,12 +76,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerName = "LayerName_example" # String | 
-$Version = "Version_example" # String | 
+$LayerName = "MyLayerName" # String | 
+$Version = "MyVersion" # String | 
 
 # get a layer by name
 try {
-     $Result = Get-OKLayerByName -LayerName $LayerName -Version $Version
+    $Result = Get-OKLayerByName -LayerName $LayerName -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKLayerByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -128,12 +128,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerNames = @("Inner_example") # String[] | 
-$Version = "Version_example" # String | 
+$LayerNames = "MyLayerNames" # String[] | 
+$Version = "MyVersion" # String | 
 
 # get layers by name
 try {
-     $Result = Get-OKLayersByName -LayerNames $LayerNames -Version $Version
+    $Result = Get-OKLayersByName -LayerNames $LayerNames -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKLayersByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

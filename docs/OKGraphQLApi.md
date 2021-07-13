@@ -25,10 +25,10 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$GraphQLQuery = (Initialize-GraphQLQuery -OperationName "OperationName_example" -NamedQuery "NamedQuery_example" -Query "Query_example" -Variables "TODO") # GraphQLQuery |  (optional)
+$GraphQLQuery = Initialize-GraphQLQuery -OperationName "MyOperationName" -NamedQuery "MyNamedQuery" -Query "MyQuery" -Variables # GraphQLQuery |  (optional)
 
 try {
-     $Result = Debug-OK -GraphQLQuery $GraphQLQuery
+    $Result = Debug-OK -GraphQLQuery $GraphQLQuery
 } catch {
     Write-Host ("Exception occured when calling Debug-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -73,10 +73,10 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$GraphQLQuery = (Initialize-GraphQLQuery -OperationName "OperationName_example" -NamedQuery "NamedQuery_example" -Query "Query_example" -Variables "TODO") # GraphQLQuery |  (optional)
+$GraphQLQuery = Initialize-GraphQLQuery -OperationName "MyOperationName" -NamedQuery "MyNamedQuery" -Query "MyQuery" -Variables # GraphQLQuery |  (optional)
 
 try {
-     $Result = ConvertTo-OKdex -GraphQLQuery $GraphQLQuery
+    $Result = ConvertTo-OKdex -GraphQLQuery $GraphQLQuery
 } catch {
     Write-Host ("Exception occured when calling ConvertTo-OKdex: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

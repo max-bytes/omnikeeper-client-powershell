@@ -29,12 +29,15 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
-$BulkCIAttributeLayerScopeDTO = (Initialize-BulkCIAttributeLayerScopeDTO -NamePrefix "NamePrefix_example" -LayerID 123 -Fragments @((Initialize-FragmentDTO -Name "Name_example" -Value (Initialize-AttributeValueDTO -Type (Initialize-AttributeValueType ) -IsArray $false -Values @("Values_example")) -Ciid "Ciid_example"))) # BulkCIAttributeLayerScopeDTO | 
+$Version = "MyVersion" # String | 
+$AttributeValueDTO = Initialize-AttributeValueDTO -Type "Text" -IsArray $false -Values "MyValues"
+$FragmentDTO = Initialize-FragmentDTO -Name "MyName" -Value $AttributeValueDTO -Ciid "MyCiid"
+
+$BulkCIAttributeLayerScopeDTO = Initialize-BulkCIAttributeLayerScopeDTO -NamePrefix "MyNamePrefix" -LayerID 0 -Fragments $FragmentDTO # BulkCIAttributeLayerScopeDTO | 
 
 # bulk replace all attributes in specified layer
 try {
-     $Result = Invoke-OKBulkReplaceAttributesInLayer -Version $Version -BulkCIAttributeLayerScopeDTO $BulkCIAttributeLayerScopeDTO
+    $Result = Invoke-OKBulkReplaceAttributesInLayer -Version $Version -BulkCIAttributeLayerScopeDTO $BulkCIAttributeLayerScopeDTO
 } catch {
     Write-Host ("Exception occured when calling Invoke-OKBulkReplaceAttributesInLayer: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -84,14 +87,14 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Regex = "Regex_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$Ciids = @("Inner_example") # String[] |  (optional)
-$AtTime = Get-Date # System.DateTime |  (optional)
+$Regex = "MyRegex" # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$Ciids = "MyCiids" # String[] |  (optional)
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Find-OKMergedAttributesByName -Regex $Regex -LayerIDs $LayerIDs -Version $Version -Ciids $Ciids -AtTime $AtTime
+    $Result = Find-OKMergedAttributesByName -Regex $Regex -LayerIDs $LayerIDs -Version $Version -Ciids $Ciids -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Find-OKMergedAttributesByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -144,14 +147,14 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = "Ciid_example" # String | 
-$Name = "Name_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$Name = "MyName" # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKMergedAttribute -Ciid $Ciid -Name $Name -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKMergedAttribute -Ciid $Ciid -Name $Name -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKMergedAttribute: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -203,13 +206,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciids = @("Inner_example") # String[] | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$Ciids = "MyCiids" # String[] | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKMergedAttributes -Ciids $Ciids -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKMergedAttributes -Ciids $Ciids -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKMergedAttributes: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -260,13 +263,13 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Name = "Name_example" # String | 
-$LayerIDs = @(123) # Int64[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$Name = "MyName" # String | 
+$LayerIDs = 0 # Int64[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Get-OKMergedAttributesWithName -Name $Name -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
+    $Result = Get-OKMergedAttributesWithName -Name $Name -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Get-OKMergedAttributesWithName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

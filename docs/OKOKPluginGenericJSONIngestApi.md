@@ -29,11 +29,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
-$Context = (Initialize-Context -Name "Name_example" -ExtractConfig "TODO" -TransformConfig "TODO" -LoadConfig (Initialize-ILoadConfig -SearchLayerIDs @(123) -WriteLayerID 123)) # Context | 
+$Version = "MyVersion" # String | 
+$ILoadConfig = Initialize-ILoadConfig -SearchLayerIDs 0 -WriteLayerID 0
+$Context = Initialize-Context -Name "MyName" -ExtractConfig  -TransformConfig  -LoadConfig $ILoadConfig # Context | 
 
 try {
-     $Result = Add-OKNewContext -Version $Version -Context $Context
+    $Result = Add-OKNewContext -Version $Version -Context $Context
 } catch {
     Write-Host ("Exception occured when calling Add-OKNewContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -79,10 +80,10 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Version = "Version_example" # String | 
+$Version = "MyVersion" # String | 
 
 try {
-     $Result = Get-OKAllContexts -Version $Version
+    $Result = Get-OKAllContexts -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKAllContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -128,11 +129,11 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Name = "Name_example" # String | 
-$Version = "Version_example" # String | 
+$Name = "MyName" # String | 
+$Version = "MyVersion" # String | 
 
 try {
-     $Result = Get-OKContextByName -Name $Name -Version $Version
+    $Result = Get-OKContextByName -Name $Name -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Get-OKContextByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -180,12 +181,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Context = "Context_example" # String | 
-$Version = "Version_example" # String | 
-$Files = @(123) # System.IO.FileInfo[] | 
+$Context = "MyContext" # String | 
+$Version = "MyVersion" # String | 
+$Files =  # System.IO.FileInfo[] | 
 
 try {
-     $Result = ConvertTo-OKgest -Context $Context -Version $Version -Files $Files
+    $Result = ConvertTo-OKgest -Context $Context -Version $Version -Files $Files
 } catch {
     Write-Host ("Exception occured when calling ConvertTo-OKgest: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -233,11 +234,11 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Name = "Name_example" # String | 
-$Version = "Version_example" # String | 
+$Name = "MyName" # String | 
+$Version = "MyVersion" # String | 
 
 try {
-     $Result = Remove-OKContext -Name $Name -Version $Version
+    $Result = Remove-OKContext -Name $Name -Version $Version
 } catch {
     Write-Host ("Exception occured when calling Remove-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))

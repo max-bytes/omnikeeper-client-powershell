@@ -28,14 +28,14 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = @(123) # Int64[] | 
-$WithTraits = @("Inner_example") # String[] | 
-$WithoutTraits = @("Inner_example") # String[] | 
-$Version = "Version_example" # String | 
-$AtTime = Get-Date # System.DateTime |  (optional)
+$LayerIDs = 0 # Int64[] | 
+$WithTraits = "MyWithTraits" # String[] | 
+$WithoutTraits = "MyWithoutTraits" # String[] | 
+$Version = "MyVersion" # String | 
+$AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-     $Result = Search-OKCIsByTraits -LayerIDs $LayerIDs -WithTraits $WithTraits -WithoutTraits $WithoutTraits -Version $Version -AtTime $AtTime
+    $Result = Search-OKCIsByTraits -LayerIDs $LayerIDs -WithTraits $WithTraits -WithoutTraits $WithoutTraits -Version $Version -AtTime $AtTime
 } catch {
     Write-Host ("Exception occured when calling Search-OKCIsByTraits: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
