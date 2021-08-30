@@ -27,10 +27,10 @@ function Initialize-OKILoadConfig {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [Int64[]]
+        [String[]]
         ${SearchLayerIDs},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[Int64]]
+        [String]
         ${WriteLayerID}
     )
 

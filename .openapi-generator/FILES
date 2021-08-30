@@ -32,7 +32,6 @@ docs/OKLayerApi.md
 docs/OKOKPluginGenericJSONIngestApi.md
 docs/OKRelationApi.md
 docs/OKTraitApi.md
-docs/PredicateDTO.md
 docs/ProblemDetails.md
 docs/RelatedCIDTO.md
 docs/RelationDTO.md
@@ -70,7 +69,6 @@ src/okclient/Model/GridViewColumn.ps1
 src/okclient/Model/GridViewConfiguration.ps1
 src/okclient/Model/ILoadConfig.ps1
 src/okclient/Model/LayerDTO.ps1
-src/okclient/Model/PredicateDTO.ps1
 src/okclient/Model/ProblemDetails.ps1
 src/okclient/Model/RelatedCIDTO.ps1
 src/okclient/Model/RelationDTO.ps1

@@ -11,8 +11,8 @@ Method | HTTP request | Description
 # **ConvertTo-OKgestXML**
 > void ConvertTo-OKgestXML<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-WriteLayerID] <Int64><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SearchLayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-WriteLayerID] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SearchLayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Files] <System.IO.FileInfo[]><br>
 
 
@@ -28,8 +28,8 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Version = "MyVersion" # String | 
-$WriteLayerID = 789 # Int64 | 
-$SearchLayerIDs = 0 # Int64[] | 
+$WriteLayerID = "MyWriteLayerID" # String | 
+$SearchLayerIDs = "MySearchLayerIDs" # String[] | 
 $Files =  # System.IO.FileInfo[] | 
 
 try {
@@ -45,8 +45,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Version** | **String**|  | 
- **WriteLayerID** | **Int64**|  | 
- **SearchLayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **WriteLayerID** | **String**|  | 
+ **SearchLayerIDs** | [**String[]**](String.md)|  | 
  **Files** | **System.IO.FileInfo[]**|  | 
 
 ### Return type

@@ -419,160 +419,6 @@ function Edit-OKContext {
 <#
 .SYNOPSIS
 
-Returns a single context in full
-
-.DESCRIPTION
-
-No description available.
-
-.PARAMETER Name
-No description available.
-
-.PARAMETER Version
-No description available.
-
-.PARAMETER WithHttpInfo
-
-A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
-
-.OUTPUTS
-
-None
-#>
-function Get-OKContext {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${Name},
-        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${Version},
-        [Switch]
-        $WithHttpInfo
-    )
-
-    Process {
-        'Calling method: Get-OKContext' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $LocalVarAccepts = @()
-        $LocalVarContentTypes = @()
-        $LocalVarQueryParameters = @{}
-        $LocalVarHeaderParameters = @{}
-        $LocalVarFormParameters = @{}
-        $LocalVarPathParameters = @{}
-        $LocalVarCookieParameters = @{}
-        $LocalVarBodyParameter = $null
-
-        $Configuration = Get-OKConfiguration
-        $LocalVarUri = '/api/v{version}/GridView/context/{name}'
-        if (!$Name) {
-            throw "Error! The required parameter `Name` missing when calling getContext."
-        }
-        $LocalVarUri = $LocalVarUri.replace('{name}', [System.Web.HTTPUtility]::UrlEncode($Name))
-        if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling getContext."
-        }
-        $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
-
-
-
-        $LocalVarResult = Invoke-OKApiClient -Method 'GET' `
-                                -Uri $LocalVarUri `
-                                -Accepts $LocalVarAccepts `
-                                -ContentTypes $LocalVarContentTypes `
-                                -Body $LocalVarBodyParameter `
-                                -HeaderParameters $LocalVarHeaderParameters `
-                                -QueryParameters $LocalVarQueryParameters `
-                                -FormParameters $LocalVarFormParameters `
-                                -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "" `
-                                -IsBodyNullable $false
-
-        if ($WithHttpInfo.IsPresent) {
-            return $LocalVarResult
-        } else {
-            return $LocalVarResult["Response"]
-        }
-    }
-}
-
-<#
-.SYNOPSIS
-
-Returns a list of contexts for grid view.
-
-.DESCRIPTION
-
-No description available.
-
-.PARAMETER Version
-No description available.
-
-.PARAMETER WithHttpInfo
-
-A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
-
-.OUTPUTS
-
-None
-#>
-function Get-OKContexts {
-    [CmdletBinding()]
-    Param (
-        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [String]
-        ${Version},
-        [Switch]
-        $WithHttpInfo
-    )
-
-    Process {
-        'Calling method: Get-OKContexts' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $LocalVarAccepts = @()
-        $LocalVarContentTypes = @()
-        $LocalVarQueryParameters = @{}
-        $LocalVarHeaderParameters = @{}
-        $LocalVarFormParameters = @{}
-        $LocalVarPathParameters = @{}
-        $LocalVarCookieParameters = @{}
-        $LocalVarBodyParameter = $null
-
-        $Configuration = Get-OKConfiguration
-        $LocalVarUri = '/api/v{version}/GridView/contexts'
-        if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling getContexts."
-        }
-        $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
-
-
-
-        $LocalVarResult = Invoke-OKApiClient -Method 'GET' `
-                                -Uri $LocalVarUri `
-                                -Accepts $LocalVarAccepts `
-                                -ContentTypes $LocalVarContentTypes `
-                                -Body $LocalVarBodyParameter `
-                                -HeaderParameters $LocalVarHeaderParameters `
-                                -QueryParameters $LocalVarQueryParameters `
-                                -FormParameters $LocalVarFormParameters `
-                                -CookieParameters $LocalVarCookieParameters `
-                                -ReturnType "" `
-                                -IsBodyNullable $false
-
-        if ($WithHttpInfo.IsPresent) {
-            return $LocalVarResult
-        } else {
-            return $LocalVarResult["Response"]
-        }
-    }
-}
-
-<#
-.SYNOPSIS
-
 Returns grid view data for specific context
 
 .DESCRIPTION
@@ -627,6 +473,160 @@ function Get-OKData {
         $LocalVarUri = $LocalVarUri.replace('{context}', [System.Web.HTTPUtility]::UrlEncode($Context))
         if (!$Version) {
             throw "Error! The required parameter `Version` missing when calling getData."
+        }
+        $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
+
+
+
+        $LocalVarResult = Invoke-OKApiClient -Method 'GET' `
+                                -Uri $LocalVarUri `
+                                -Accepts $LocalVarAccepts `
+                                -ContentTypes $LocalVarContentTypes `
+                                -Body $LocalVarBodyParameter `
+                                -HeaderParameters $LocalVarHeaderParameters `
+                                -QueryParameters $LocalVarQueryParameters `
+                                -FormParameters $LocalVarFormParameters `
+                                -CookieParameters $LocalVarCookieParameters `
+                                -ReturnType "" `
+                                -IsBodyNullable $false
+
+        if ($WithHttpInfo.IsPresent) {
+            return $LocalVarResult
+        } else {
+            return $LocalVarResult["Response"]
+        }
+    }
+}
+
+<#
+.SYNOPSIS
+
+Returns a single context in full
+
+.DESCRIPTION
+
+No description available.
+
+.PARAMETER Name
+No description available.
+
+.PARAMETER Version
+No description available.
+
+.PARAMETER WithHttpInfo
+
+A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
+
+.OUTPUTS
+
+None
+#>
+function Get-OKGridViewContext {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${Name},
+        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${Version},
+        [Switch]
+        $WithHttpInfo
+    )
+
+    Process {
+        'Calling method: Get-OKGridViewContext' | Write-Debug
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $LocalVarAccepts = @()
+        $LocalVarContentTypes = @()
+        $LocalVarQueryParameters = @{}
+        $LocalVarHeaderParameters = @{}
+        $LocalVarFormParameters = @{}
+        $LocalVarPathParameters = @{}
+        $LocalVarCookieParameters = @{}
+        $LocalVarBodyParameter = $null
+
+        $Configuration = Get-OKConfiguration
+        $LocalVarUri = '/api/v{version}/GridView/context/{name}'
+        if (!$Name) {
+            throw "Error! The required parameter `Name` missing when calling getGridViewContext."
+        }
+        $LocalVarUri = $LocalVarUri.replace('{name}', [System.Web.HTTPUtility]::UrlEncode($Name))
+        if (!$Version) {
+            throw "Error! The required parameter `Version` missing when calling getGridViewContext."
+        }
+        $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
+
+
+
+        $LocalVarResult = Invoke-OKApiClient -Method 'GET' `
+                                -Uri $LocalVarUri `
+                                -Accepts $LocalVarAccepts `
+                                -ContentTypes $LocalVarContentTypes `
+                                -Body $LocalVarBodyParameter `
+                                -HeaderParameters $LocalVarHeaderParameters `
+                                -QueryParameters $LocalVarQueryParameters `
+                                -FormParameters $LocalVarFormParameters `
+                                -CookieParameters $LocalVarCookieParameters `
+                                -ReturnType "" `
+                                -IsBodyNullable $false
+
+        if ($WithHttpInfo.IsPresent) {
+            return $LocalVarResult
+        } else {
+            return $LocalVarResult["Response"]
+        }
+    }
+}
+
+<#
+.SYNOPSIS
+
+Returns a list of contexts for grid view.
+
+.DESCRIPTION
+
+No description available.
+
+.PARAMETER Version
+No description available.
+
+.PARAMETER WithHttpInfo
+
+A switch when turned on will return a hash table of Response, StatusCode and Headers instead of just the Response
+
+.OUTPUTS
+
+None
+#>
+function Get-OKGridViewContexts {
+    [CmdletBinding()]
+    Param (
+        [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [String]
+        ${Version},
+        [Switch]
+        $WithHttpInfo
+    )
+
+    Process {
+        'Calling method: Get-OKGridViewContexts' | Write-Debug
+        $PSBoundParameters | Out-DebugParameter | Write-Debug
+
+        $LocalVarAccepts = @()
+        $LocalVarContentTypes = @()
+        $LocalVarQueryParameters = @{}
+        $LocalVarHeaderParameters = @{}
+        $LocalVarFormParameters = @{}
+        $LocalVarPathParameters = @{}
+        $LocalVarCookieParameters = @{}
+        $LocalVarBodyParameter = $null
+
+        $Configuration = Get-OKConfiguration
+        $LocalVarUri = '/api/v{version}/GridView/contexts'
+        if (!$Version) {
+            throw "Error! The required parameter `Version` missing when calling getGridViewContexts."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 

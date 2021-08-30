@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **String** |  | [optional] 
+**Id** | **String** |  | [optional] 
 **ExtractConfig** | [**SystemCollectionsHashtable**](.md) |  | [optional] 
 **TransformConfig** | [**SystemCollectionsHashtable**](.md) |  | [optional] 
 **LoadConfig** | [**ILoadConfig**](ILoadConfig.md) |  | [optional] 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 - Prepare the resource
 ```powershell
-$Context = Initialize-okclientContext  -Name null `
+$Context = Initialize-okclientContext  -Id null `
  -ExtractConfig null `
  -TransformConfig null `
  -LoadConfig null

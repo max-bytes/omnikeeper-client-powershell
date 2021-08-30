@@ -38,10 +38,10 @@ function ConvertTo-OKgestAnsibleInventoryScan {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [Int64]
+        [String]
         ${WriteLayerID},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${SearchLayerIDs},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]

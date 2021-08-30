@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**Rename-OKData**](OKGridViewApi.md#Rename-OKData) | **POST** /api/v{version}/GridView/contexts/{context}/change | Saves grid view row changes and returns change results
 [**Invoke-OKDeleteContext**](OKGridViewApi.md#Invoke-OKDeleteContext) | **DELETE** /api/v{version}/GridView/context/{name} | Deletes specific context
 [**Edit-OKContext**](OKGridViewApi.md#Edit-OKContext) | **PUT** /api/v{version}/GridView/context/{name} | Edits specific context
-[**Get-OKContext**](OKGridViewApi.md#Get-OKContext) | **GET** /api/v{version}/GridView/context/{name} | Returns a single context in full
-[**Get-OKContexts**](OKGridViewApi.md#Get-OKContexts) | **GET** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
 [**Get-OKData**](OKGridViewApi.md#Get-OKData) | **GET** /api/v{version}/GridView/contexts/{context}/data | Returns grid view data for specific context
+[**Get-OKGridViewContext**](OKGridViewApi.md#Get-OKGridViewContext) | **GET** /api/v{version}/GridView/context/{name} | Returns a single context in full
+[**Get-OKGridViewContexts**](OKGridViewApi.md#Get-OKGridViewContexts) | **GET** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
 [**Get-OKSchema**](OKGridViewApi.md#Get-OKSchema) | **GET** /api/v{version}/GridView/contexts/{context}/schema | Returns grid view schema for specific context
 
 
@@ -33,10 +33,10 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Version = "MyVersion" # String | 
-$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer 0
-$GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer 0 -ReadLayerset 0 -Columns $GridViewColumn -Trait "MyTrait"
+$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer "MyWriteLayer"
+$GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer "MyWriteLayer" -ReadLayerset "MyReadLayerset" -Columns $GridViewColumn -Trait "MyTrait"
 
-$AddContextRequest = Initialize-AddContextRequest -Name "MyName" -SpeakingName "MySpeakingName" -Description "MyDescription" -Configuration $GridViewConfiguration # AddContextRequest |  (optional)
+$AddContextRequest = Initialize-AddContextRequest -Id "MyId" -SpeakingName "MySpeakingName" -Description "MyDescription" -Configuration $GridViewConfiguration # AddContextRequest |  (optional)
 
 # Adds new context
 try {
@@ -202,8 +202,8 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Name = "MyName" # String | 
 $Version = "MyVersion" # String | 
-$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer 0
-$GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer 0 -ReadLayerset 0 -Columns $GridViewColumn -Trait "MyTrait"
+$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer "MyWriteLayer"
+$GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer "MyWriteLayer" -ReadLayerset "MyReadLayerset" -Columns $GridViewColumn -Trait "MyTrait"
 
 $EditContextRequest = Initialize-EditContextRequest -SpeakingName "MySpeakingName" -Description "MyDescription" -Configuration $GridViewConfiguration # EditContextRequest |  (optional)
 
@@ -236,107 +236,6 @@ void (empty response body)
 
  - **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
  - **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="Get-OKContext"></a>
-# **Get-OKContext**
-> void Get-OKContext<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
-
-Returns a single context in full
-
-### Example
-```powershell
-# general setting of the PowerShell module, e.g. base URL, authentication, etc
-$Configuration = Get-Configuration
-# Configure OAuth2 access token for authorization: oauth2
-$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
-
-# Configure OAuth2 access token for authorization: oauth2
-$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
-
-$Name = "MyName" # String | 
-$Version = "MyVersion" # String | 
-
-# Returns a single context in full
-try {
-    $Result = Get-OKContext -Name $Name -Version $Version
-} catch {
-    Write-Host ("Exception occured when calling Get-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
-    Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **Name** | **String**|  | 
- **Version** | **String**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="Get-OKContexts"></a>
-# **Get-OKContexts**
-> void Get-OKContexts<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
-
-Returns a list of contexts for grid view.
-
-### Example
-```powershell
-# general setting of the PowerShell module, e.g. base URL, authentication, etc
-$Configuration = Get-Configuration
-# Configure OAuth2 access token for authorization: oauth2
-$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
-
-# Configure OAuth2 access token for authorization: oauth2
-$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
-
-$Version = "MyVersion" # String | 
-
-# Returns a list of contexts for grid view.
-try {
-    $Result = Get-OKContexts -Version $Version
-} catch {
-    Write-Host ("Exception occured when calling Get-OKContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
-    Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **Version** | **String**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -375,6 +274,107 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Context** | **String**|  | 
+ **Version** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="Get-OKGridViewContext"></a>
+# **Get-OKGridViewContext**
+> void Get-OKGridViewContext<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
+
+Returns a single context in full
+
+### Example
+```powershell
+# general setting of the PowerShell module, e.g. base URL, authentication, etc
+$Configuration = Get-Configuration
+# Configure OAuth2 access token for authorization: oauth2
+$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
+
+# Configure OAuth2 access token for authorization: oauth2
+$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
+
+$Name = "MyName" # String | 
+$Version = "MyVersion" # String | 
+
+# Returns a single context in full
+try {
+    $Result = Get-OKGridViewContext -Name $Name -Version $Version
+} catch {
+    Write-Host ("Exception occured when calling Get-OKGridViewContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Name** | **String**|  | 
+ **Version** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2), [oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="Get-OKGridViewContexts"></a>
+# **Get-OKGridViewContexts**
+> void Get-OKGridViewContexts<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
+
+Returns a list of contexts for grid view.
+
+### Example
+```powershell
+# general setting of the PowerShell module, e.g. base URL, authentication, etc
+$Configuration = Get-Configuration
+# Configure OAuth2 access token for authorization: oauth2
+$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
+
+# Configure OAuth2 access token for authorization: oauth2
+$Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
+
+$Version = "MyVersion" # String | 
+
+# Returns a list of contexts for grid view.
+try {
+    $Result = Get-OKGridViewContexts -Version $Version
+} catch {
+    Write-Host ("Exception occured when calling Get-OKGridViewContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
  **Version** | **String**|  | 
 
 ### Return type

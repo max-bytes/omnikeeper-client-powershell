@@ -36,10 +36,10 @@ function Initialize-OKGridViewConfiguration {
         [System.Nullable[Boolean]]
         ${ShowCIIDColumn},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[Int64]]
+        [String]
         ${WriteLayer},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
-        [Int64[]]
+        [String[]]
         ${ReadLayerset},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject[]]

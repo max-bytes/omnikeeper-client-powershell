@@ -135,7 +135,7 @@ function Find-OKMergedAttributesByName {
         [String]
         ${Regex},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -186,14 +186,18 @@ function Find-OKMergedAttributesByName {
         }
         $LocalVarQueryParameters['regex'] = $Regex
 
-        $LocalVarQueryParameters['ciids'] = $Ciids
+        if ($Ciids) {
+            $LocalVarQueryParameters['ciids'] = $Ciids
+        }
 
         if (!$LayerIDs) {
             throw "Error! The required parameter `LayerIDs` missing when calling findMergedAttributesByName."
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -263,7 +267,7 @@ function Get-OKMergedAttribute {
         [String]
         ${Name},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -321,7 +325,9 @@ function Get-OKMergedAttribute {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -385,7 +391,7 @@ function Get-OKMergedAttributes {
         [String[]]
         ${Ciids},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -438,7 +444,9 @@ function Get-OKMergedAttributes {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -502,7 +510,7 @@ function Get-OKMergedAttributesWithName {
         [String]
         ${Name},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -555,7 +563,9 @@ function Get-OKMergedAttributesWithName {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 

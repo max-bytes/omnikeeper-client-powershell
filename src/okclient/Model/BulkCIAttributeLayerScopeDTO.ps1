@@ -32,7 +32,7 @@ function Initialize-OKBulkCIAttributeLayerScopeDTO {
         [String]
         ${NamePrefix},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
-        [Int64]
+        [String]
         ${LayerID},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject[]]

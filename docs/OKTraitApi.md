@@ -10,7 +10,7 @@ Method | HTTP request | Description
 <a name="Get-OKEffectiveTraitsForTraitName"></a>
 # **Get-OKEffectiveTraitsForTraitName**
 > System.Collections.Hashtable Get-OKEffectiveTraitsForTraitName<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-TraitName] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
@@ -27,7 +27,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $TraitName = "MyTraitName" # String | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **TraitName** | **String**|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 

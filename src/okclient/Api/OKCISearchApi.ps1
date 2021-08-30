@@ -45,7 +45,7 @@ function Search-OKCIsByTraits {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String[]]
@@ -109,7 +109,9 @@ function Search-OKCIsByTraits {
         }
         $LocalVarQueryParameters['withoutTraits'] = $WithoutTraits
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 

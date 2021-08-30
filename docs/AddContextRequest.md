@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **String** |  | [optional] 
+**Id** | **String** |  | [optional] 
 **SpeakingName** | **String** |  | [optional] 
 **Description** | **String** |  | [optional] 
 **Configuration** | [**GridViewConfiguration**](GridViewConfiguration.md) |  | [optional] 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 - Prepare the resource
 ```powershell
-$AddContextRequest = Initialize-okclientAddContextRequest  -Name null `
+$AddContextRequest = Initialize-okclientAddContextRequest  -Id null `
  -SpeakingName null `
  -Description null `
  -Configuration null

@@ -39,7 +39,7 @@ function Get-OKAllMergedRelations {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -87,7 +87,9 @@ function Get-OKAllMergedRelations {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -163,7 +165,7 @@ function Get-OKMergedRelation {
         [String]
         ${PredicateID},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -226,7 +228,9 @@ function Get-OKMergedRelation {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -290,7 +294,7 @@ function Get-OKMergedRelationsFromOrToCI {
         [PSCustomObject]
         ${Ciid},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -343,7 +347,9 @@ function Get-OKMergedRelationsFromOrToCI {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -407,7 +413,7 @@ function Get-OKMergedRelationsOutgoingFromCI {
         [PSCustomObject]
         ${FromCIID},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -460,7 +466,9 @@ function Get-OKMergedRelationsOutgoingFromCI {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -524,7 +532,7 @@ function Get-OKMergedRelationsWithPredicate {
         [String]
         ${PredicateID},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -577,7 +585,9 @@ function Get-OKMergedRelationsWithPredicate {
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 

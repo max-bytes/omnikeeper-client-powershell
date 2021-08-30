@@ -10,8 +10,8 @@ Method | HTTP request | Description
 <a name="ConvertTo-OKgestAnsibleInventoryScan"></a>
 # **ConvertTo-OKgestAnsibleInventoryScan**
 > void ConvertTo-OKgestAnsibleInventoryScan<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-WriteLayerID] <Int64><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SearchLayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-WriteLayerID] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SearchLayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AnsibleInventoryScanDTO] <PSCustomObject><br>
 
@@ -27,8 +27,8 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$WriteLayerID = 789 # Int64 | 
-$SearchLayerIDs = 0 # Int64[] | 
+$WriteLayerID = "MyWriteLayerID" # String | 
+$SearchLayerIDs = "MySearchLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AnsibleInventoryScanDTO = Initialize-AnsibleInventoryScanDTO -SetupFacts @{ key_example =  } -YumInstalled @{ key_example =  } -YumRepos @{ key_example =  } -YumUpdates @{ key_example =  } # AnsibleInventoryScanDTO | 
 
@@ -44,8 +44,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **WriteLayerID** | **Int64**|  | 
- **SearchLayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **WriteLayerID** | **String**|  | 
+ **SearchLayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AnsibleInventoryScanDTO** | [**AnsibleInventoryScanDTO**](AnsibleInventoryScanDTO.md)|  | 
 

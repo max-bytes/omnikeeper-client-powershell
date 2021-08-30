@@ -40,7 +40,7 @@ function Initialize-OKGridViewColumn {
         [PSCustomObject]
         ${ValueType},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
-        [System.Nullable[Int64]]
+        [String]
         ${WriteLayer}
     )
 

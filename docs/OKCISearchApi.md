@@ -10,7 +10,7 @@ Method | HTTP request | Description
 <a name="Search-OKCIsByTraits"></a>
 # **Search-OKCIsByTraits**
 > CIDTO[] Search-OKCIsByTraits<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-WithTraits] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-WithoutTraits] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
@@ -28,7 +28,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $WithTraits = "MyWithTraits" # String[] | 
 $WithoutTraits = "MyWithoutTraits" # String[] | 
 $Version = "MyVersion" # String | 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **WithTraits** | [**String[]**](String.md)|  | 
  **WithoutTraits** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 

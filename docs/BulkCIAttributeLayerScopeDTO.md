@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NamePrefix** | **String** |  | 
-**LayerID** | **Int64** |  | 
+**LayerID** | **String** |  | 
 **Fragments** | [**FragmentDTO[]**](FragmentDTO.md) |  | 
 
 ## Examples

@@ -3,8 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SearchLayerIDs** | **Int64[]** |  | [optional] [readonly] 
-**WriteLayerID** | **Int64** |  | [optional] [readonly] 
+**SearchLayerIDs** | **String[]** |  | [optional] [readonly] 
+**WriteLayerID** | **String** |  | [optional] [readonly] 
 
 ## Examples
 

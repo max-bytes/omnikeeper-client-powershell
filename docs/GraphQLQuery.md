@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **OperationName** | **String** |  | [optional] 
 **NamedQuery** | **String** |  | [optional] 
 **Query** | **String** |  | [optional] 
-**Variables** | [**SystemCollectionsHashtable**](.md) |  | [optional] 
+**Variables** | [**AnyType**](.md) |  | [optional] 
 
 ## Examples
 

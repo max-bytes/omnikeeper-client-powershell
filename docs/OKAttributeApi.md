@@ -33,7 +33,7 @@ $Version = "MyVersion" # String |
 $AttributeValueDTO = Initialize-AttributeValueDTO -Type "Text" -IsArray $false -Values "MyValues"
 $FragmentDTO = Initialize-FragmentDTO -Name "MyName" -Value $AttributeValueDTO -Ciid "MyCiid"
 
-$BulkCIAttributeLayerScopeDTO = Initialize-BulkCIAttributeLayerScopeDTO -NamePrefix "MyNamePrefix" -LayerID 0 -Fragments $FragmentDTO # BulkCIAttributeLayerScopeDTO | 
+$BulkCIAttributeLayerScopeDTO = Initialize-BulkCIAttributeLayerScopeDTO -NamePrefix "MyNamePrefix" -LayerID "MyLayerID" -Fragments $FragmentDTO # BulkCIAttributeLayerScopeDTO | 
 
 # bulk replace all attributes in specified layer
 try {
@@ -70,7 +70,7 @@ void (empty response body)
 # **Find-OKMergedAttributesByName**
 > CIAttributeDTO[] Find-OKMergedAttributesByName<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Regex] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciids] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
@@ -88,7 +88,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Regex = "MyRegex" # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $Ciids = "MyCiids" # String[] |  (optional)
 $AtTime = (Get-Date) # System.DateTime |  (optional)
@@ -106,7 +106,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Regex** | **String**|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **Ciids** | [**String[]**](String.md)|  | [optional] 
  **AtTime** | **System.DateTime**|  | [optional] 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 > CIAttributeDTO Get-OKMergedAttribute<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -149,7 +149,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
 $Name = "MyName" # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Ciid** | [**String**](String.md)|  | 
  **Name** | **String**|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 # **Get-OKMergedAttributes**
 > CIAttributeDTO[] Get-OKMergedAttributes<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciids] <String[]><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -207,7 +207,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Ciids = "MyCiids" # String[] | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -224,7 +224,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Ciids** | [**String[]**](String.md)|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 # **Get-OKMergedAttributesWithName**
 > CIAttributeDTO[] Get-OKMergedAttributesWithName<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -264,7 +264,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Name = "MyName" # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -281,7 +281,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Name** | **String**|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 

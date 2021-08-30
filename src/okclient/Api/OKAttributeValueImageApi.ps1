@@ -50,7 +50,7 @@ function Get-OK {
         [String]
         ${AttributeName},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -104,7 +104,9 @@ function Get-OK {
             $LocalVarQueryParameters['index'] = $Index
         }
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -173,7 +175,7 @@ function Submit-OK {
         [String]
         ${AttributeName},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [Int64]
+        [String]
         ${LayerID},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]

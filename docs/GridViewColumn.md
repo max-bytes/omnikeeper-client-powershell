@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **SourceAttributeName** | **String** |  | [optional] 
 **ColumnDescription** | **String** |  | [optional] 
 **ValueType** | [**AttributeValueType**](AttributeValueType.md) |  | [optional] 
-**WriteLayer** | **Int64** |  | [optional] 
+**WriteLayer** | **String** |  | [optional] 
 
 ## Examples
 

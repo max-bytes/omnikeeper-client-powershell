@@ -22,8 +22,6 @@ No description available.
 No description available.
 .PARAMETER PredicateID
 No description available.
-.PARAMETER Predicate
-No description available.
 .PARAMETER State
 No description available.
 .OUTPUTS
@@ -48,9 +46,6 @@ function Initialize-OKRelationDTO {
         ${PredicateID},
         [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject]
-        ${Predicate},
-        [Parameter(Position = 5, ValueFromPipelineByPropertyName = $true)]
-        [PSCustomObject]
         ${State}
     )
 
@@ -74,10 +69,6 @@ function Initialize-OKRelationDTO {
             throw "invalid value for 'PredicateID', 'PredicateID' cannot be null."
         }
 
-        if ($Predicate -eq $null) {
-            throw "invalid value for 'Predicate', 'Predicate' cannot be null."
-        }
-
         if ($State -eq $null) {
             throw "invalid value for 'State', 'State' cannot be null."
         }
@@ -88,7 +79,6 @@ function Initialize-OKRelationDTO {
             "fromCIID" = ${FromCIID}
             "toCIID" = ${ToCIID}
             "predicateID" = ${PredicateID}
-            "predicate" = ${Predicate}
             "state" = ${State}
         }
 
@@ -127,7 +117,7 @@ function ConvertFrom-OKJsonToRelationDTO {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKRelationDTO
-        $AllProperties = ("id", "fromCIID", "toCIID", "predicateID", "predicate", "state")
+        $AllProperties = ("id", "fromCIID", "toCIID", "predicateID", "state")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -162,12 +152,6 @@ function ConvertFrom-OKJsonToRelationDTO {
             $PredicateID = $JsonParameters.PSobject.Properties["predicateID"].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "predicate"))) {
-            throw "Error! JSON cannot be serialized due to the required property 'predicate' missing."
-        } else {
-            $Predicate = $JsonParameters.PSobject.Properties["predicate"].value
-        }
-
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "state"))) {
             throw "Error! JSON cannot be serialized due to the required property 'state' missing."
         } else {
@@ -179,7 +163,6 @@ function ConvertFrom-OKJsonToRelationDTO {
             "fromCIID" = ${FromCIID}
             "toCIID" = ${ToCIID}
             "predicateID" = ${PredicateID}
-            "predicate" = ${Predicate}
             "state" = ${State}
         }
 

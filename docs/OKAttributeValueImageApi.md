@@ -13,7 +13,7 @@ Method | HTTP request | Description
 > void Get-OK<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AttributeName] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Index] <System.Nullable[Int32]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
@@ -32,7 +32,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
 $AttributeName = "MyAttributeName" # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $Index = 56 # Int32 |  (optional) (default to 0)
 $AtTime = (Get-Date) # System.DateTime |  (optional)
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Ciid** | [**String**](String.md)|  | 
  **AttributeName** | **String**|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **Index** | **Int32**|  | [optional] [default to 0]
  **AtTime** | **System.DateTime**|  | [optional] 
@@ -76,7 +76,7 @@ void (empty response body)
 > void Submit-OK<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AttributeName] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerID] <Int64><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerID] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Files] <System.IO.FileInfo[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ForceArray] <System.Nullable[Boolean]><br>
@@ -95,7 +95,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
 $AttributeName = "MyAttributeName" # String | 
-$LayerID = 789 # Int64 | 
+$LayerID = "MyLayerID" # String | 
 $Version = "MyVersion" # String | 
 $Files =  # System.IO.FileInfo[] | 
 $ForceArray = $true # Boolean |  (optional) (default to $false)
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Ciid** | [**String**](String.md)|  | 
  **AttributeName** | **String**|  | 
- **LayerID** | **Int64**|  | 
+ **LayerID** | **String**|  | 
  **Version** | **String**|  | 
  **Files** | **System.IO.FileInfo[]**|  | 
  **ForceArray** | **Boolean**|  | [optional] [default to $false]

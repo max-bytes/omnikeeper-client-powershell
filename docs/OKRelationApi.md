@@ -14,7 +14,7 @@ Method | HTTP request | Description
 <a name="Get-OKAllMergedRelations"></a>
 # **Get-OKAllMergedRelations**
 > RelationDTO[] Get-OKAllMergedRelations<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -30,7 +30,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -46,7 +46,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FromCIID] <PSCustomObject><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ToCIID] <PSCustomObject><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PredicateID] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -90,7 +90,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $FromCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
 $ToCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
 $PredicateID = "MyPredicateID" # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
  **FromCIID** | [**String**](String.md)|  | 
  **ToCIID** | [**String**](String.md)|  | 
  **PredicateID** | **String**|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 # **Get-OKMergedRelationsFromOrToCI**
 > RelationDTO[] Get-OKMergedRelationsFromOrToCI<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -149,7 +149,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -166,7 +166,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Ciid** | [**String**](String.md)|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 # **Get-OKMergedRelationsOutgoingFromCI**
 > RelationDTO[] Get-OKMergedRelationsOutgoingFromCI<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FromCIID] <PSCustomObject><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -206,7 +206,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $FromCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -223,7 +223,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **FromCIID** | [**String**](String.md)|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 
@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 # **Get-OKMergedRelationsWithPredicate**
 > RelationDTO[] Get-OKMergedRelationsWithPredicate<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PredicateID] <String><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <System.Nullable[Int64][]><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -263,7 +263,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $PredicateID = "MyPredicateID" # String | 
-$LayerIDs = 0 # Int64[] | 
+$LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
@@ -280,7 +280,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **PredicateID** | **String**|  | 
- **LayerIDs** | [**Int64[]**](Int64.md)|  | 
+ **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
 

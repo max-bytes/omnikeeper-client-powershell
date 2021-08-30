@@ -41,10 +41,10 @@ function ConvertTo-OKgestXML {
         [String]
         ${Version},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [Int64]
+        [String]
         ${WriteLayerID},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${SearchLayerIDs},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.IO.FileInfo[]]

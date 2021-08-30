@@ -3,10 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SetupFacts** | [**System.Collections.Hashtable**](SystemCollectionsHashtable.md) |  | 
-**YumInstalled** | [**System.Collections.Hashtable**](SystemCollectionsHashtable.md) |  | 
-**YumRepos** | [**System.Collections.Hashtable**](SystemCollectionsHashtable.md) |  | 
-**YumUpdates** | [**System.Collections.Hashtable**](SystemCollectionsHashtable.md) |  | 
+**SetupFacts** | [**System.Collections.Hashtable**](AnyType.md) |  | 
+**YumInstalled** | [**System.Collections.Hashtable**](AnyType.md) |  | 
+**YumRepos** | [**System.Collections.Hashtable**](AnyType.md) |  | 
+**YumUpdates** | [**System.Collections.Hashtable**](AnyType.md) |  | 
 
 ## Examples
 

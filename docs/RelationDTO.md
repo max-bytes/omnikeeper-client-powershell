@@ -6,8 +6,7 @@ Name | Type | Description | Notes
 **Id** | **String** |  | 
 **FromCIID** | **String** |  | 
 **ToCIID** | **String** |  | 
-**PredicateID** | **String** |  | [readonly] 
-**Predicate** | [**PredicateDTO**](PredicateDTO.md) |  | 
+**PredicateID** | **String** |  | 
 **State** | [**RelationState**](RelationState.md) |  | 
 
 ## Examples
@@ -18,7 +17,6 @@ $RelationDTO = Initialize-okclientRelationDTO  -Id null `
  -FromCIID null `
  -ToCIID null `
  -PredicateID null `
- -Predicate null `
  -State null
 ```
 

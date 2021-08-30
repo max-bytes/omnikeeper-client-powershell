@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ShowCIIDColumn** | **Boolean** |  | [optional] 
-**WriteLayer** | **Int64** |  | [optional] 
-**ReadLayerset** | **Int64[]** |  | [optional] 
+**WriteLayer** | **String** |  | [optional] 
+**ReadLayerset** | **String[]** |  | [optional] 
 **Columns** | [**GridViewColumn[]**](GridViewColumn.md) |  | [optional] 
 **Trait** | **String** |  | [optional] 
 

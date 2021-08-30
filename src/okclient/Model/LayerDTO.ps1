@@ -14,9 +14,9 @@ No summary available.
 
 No description available.
 
-.PARAMETER Name
-No description available.
 .PARAMETER Id
+No description available.
+.PARAMETER Description
 No description available.
 .OUTPUTS
 
@@ -28,28 +28,28 @@ function Initialize-OKLayerDTO {
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${Name},
+        ${Id},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
-        [Int64]
-        ${Id}
+        [String]
+        ${Description}
     )
 
     Process {
         'Creating PSCustomObject: okclient => OKLayerDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($Name -eq $null) {
-            throw "invalid value for 'Name', 'Name' cannot be null."
-        }
-
         if ($Id -eq $null) {
             throw "invalid value for 'Id', 'Id' cannot be null."
         }
 
+        if ($Description -eq $null) {
+            throw "invalid value for 'Description', 'Description' cannot be null."
+        }
+
 
         $PSO = [PSCustomObject]@{
-            "name" = ${Name}
             "id" = ${Id}
+            "description" = ${Description}
         }
 
 
@@ -87,7 +87,7 @@ function ConvertFrom-OKJsonToLayerDTO {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKLayerDTO
-        $AllProperties = ("name", "id")
+        $AllProperties = ("id", "description")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -95,13 +95,7 @@ function ConvertFrom-OKJsonToLayerDTO {
         }
 
         If ([string]::IsNullOrEmpty($Json) -or $Json -eq "{}") { # empty json
-            throw "Error! Empty JSON cannot be serialized due to the required property 'name' missing."
-        }
-
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "name"))) {
-            throw "Error! JSON cannot be serialized due to the required property 'name' missing."
-        } else {
-            $Name = $JsonParameters.PSobject.Properties["name"].value
+            throw "Error! Empty JSON cannot be serialized due to the required property 'id' missing."
         }
 
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "id"))) {
@@ -110,9 +104,15 @@ function ConvertFrom-OKJsonToLayerDTO {
             $Id = $JsonParameters.PSobject.Properties["id"].value
         }
 
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "description"))) {
+            throw "Error! JSON cannot be serialized due to the required property 'description' missing."
+        } else {
+            $Description = $JsonParameters.PSobject.Properties["description"].value
+        }
+
         $PSO = [PSCustomObject]@{
-            "name" = ${Name}
             "id" = ${Id}
+            "description" = ${Description}
         }
 
         return $PSO

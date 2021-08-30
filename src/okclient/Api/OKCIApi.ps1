@@ -129,7 +129,7 @@ function Get-OKCIByID {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [PSCustomObject]
@@ -185,7 +185,9 @@ function Get-OKCIByID {
         }
         $LocalVarQueryParameters['CIID'] = $CIID
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
@@ -246,7 +248,7 @@ function Get-OKCIsByID {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String[]]
@@ -302,7 +304,9 @@ function Get-OKCIsByID {
         }
         $LocalVarQueryParameters['CIIDs'] = $CIIDs
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 

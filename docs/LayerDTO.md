@@ -3,15 +3,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **String** |  | 
-**Id** | **Int64** |  | 
+**Id** | **String** |  | 
+**Description** | **String** |  | 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
-$LayerDTO = Initialize-okclientLayerDTO  -Name null `
- -Id null
+$LayerDTO = Initialize-okclientLayerDTO  -Id null `
+ -Description null
 ```
 
 - Convert the resource to JSON

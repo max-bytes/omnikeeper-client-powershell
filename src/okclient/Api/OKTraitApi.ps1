@@ -42,7 +42,7 @@ function Get-OKEffectiveTraitsForTraitName {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [System.Nullable[Int64][]]
+        [String[]]
         ${LayerIDs},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
@@ -98,7 +98,9 @@ function Get-OKEffectiveTraitsForTraitName {
         }
         $LocalVarQueryParameters['traitName'] = $TraitName
 
-        $LocalVarQueryParameters['atTime'] = $AtTime
+        if ($AtTime) {
+            $LocalVarQueryParameters['atTime'] = $AtTime
+        }
 
 
 
