@@ -40,7 +40,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OK -Ciid $Ciid -AttributeName $AttributeName -LayerIDs $LayerIDs -Version $Version -Index $Index -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -103,7 +103,7 @@ $ForceArray = $true # Boolean |  (optional) (default to $false)
 try {
     $Result = Submit-OK -Ciid $Ciid -AttributeName $AttributeName -LayerID $LayerID -Version $Version -Files $Files -ForceArray $ForceArray
 } catch {
-    Write-Host ("Exception occured when calling Submit-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Submit-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

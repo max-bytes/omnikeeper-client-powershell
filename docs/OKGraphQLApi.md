@@ -30,7 +30,7 @@ $GraphQLQuery = Initialize-GraphQLQuery -OperationName "MyOperationName" -NamedQ
 try {
     $Result = Debug-OK -GraphQLQuery $GraphQLQuery
 } catch {
-    Write-Host ("Exception occured when calling Debug-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Debug-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -78,7 +78,7 @@ $GraphQLQuery = Initialize-GraphQLQuery -OperationName "MyOperationName" -NamedQ
 try {
     $Result = ConvertTo-OKdex -GraphQLQuery $GraphQLQuery
 } catch {
-    Write-Host ("Exception occured when calling ConvertTo-OKdex: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling ConvertTo-OKdex: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

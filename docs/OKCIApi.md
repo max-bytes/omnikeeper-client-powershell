@@ -32,7 +32,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKAllCIIDs -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKAllCIIDs: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKAllCIIDs: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -87,7 +87,7 @@ $AtTime = (Get-Date) # System.DateTime | Specify datetime, for which point in ti
 try {
     $Result = Get-OKCIByID -LayerIDs $LayerIDs -CIID $CIID -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKCIByID: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKCIByID: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -145,7 +145,7 @@ $AtTime = (Get-Date) # System.DateTime | Specify datetime, for which point in ti
 try {
     $Result = Get-OKCIsByID -LayerIDs $LayerIDs -CIIDs $CIIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKCIsByID: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKCIsByID: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

@@ -32,7 +32,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKAllLayers -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKAllLayers: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKAllLayers: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -83,7 +83,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKLayerByName -LayerName $LayerName -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKLayerByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKLayerByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -135,7 +135,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKLayersByName -LayerNames $LayerNames -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKLayersByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKLayersByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

@@ -37,7 +37,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKAllMergedRelations -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKAllMergedRelations: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKAllMergedRelations: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -97,7 +97,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKMergedRelation -FromCIID $FromCIID -ToCIID $ToCIID -PredicateID $PredicateID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKMergedRelation: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKMergedRelation: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -156,7 +156,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKMergedRelationsFromOrToCI -Ciid $Ciid -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKMergedRelationsFromOrToCI: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKMergedRelationsFromOrToCI: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -213,7 +213,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKMergedRelationsOutgoingFromCI -FromCIID $FromCIID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKMergedRelationsOutgoingFromCI: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKMergedRelationsOutgoingFromCI: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -270,7 +270,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKMergedRelationsWithPredicate -PredicateID $PredicateID -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKMergedRelationsWithPredicate: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKMergedRelationsWithPredicate: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

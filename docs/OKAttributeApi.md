@@ -39,7 +39,7 @@ $BulkCIAttributeLayerScopeDTO = Initialize-BulkCIAttributeLayerScopeDTO -NamePre
 try {
     $Result = Invoke-OKBulkReplaceAttributesInLayer -Version $Version -BulkCIAttributeLayerScopeDTO $BulkCIAttributeLayerScopeDTO
 } catch {
-    Write-Host ("Exception occured when calling Invoke-OKBulkReplaceAttributesInLayer: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKBulkReplaceAttributesInLayer: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -96,7 +96,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Find-OKMergedAttributesByName -Regex $Regex -LayerIDs $LayerIDs -Version $Version -Ciids $Ciids -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Find-OKMergedAttributesByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Find-OKMergedAttributesByName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -156,7 +156,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKMergedAttribute -Ciid $Ciid -Name $Name -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKMergedAttribute: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKMergedAttribute: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -214,7 +214,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKMergedAttributes -Ciids $Ciids -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKMergedAttributes: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKMergedAttributes: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -271,7 +271,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKMergedAttributesWithName -Name $Name -LayerIDs $LayerIDs -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKMergedAttributesWithName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKMergedAttributesWithName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

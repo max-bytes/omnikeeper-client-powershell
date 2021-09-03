@@ -35,7 +35,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Get-OKEffectiveTraitsForTraitName -LayerIDs $LayerIDs -TraitName $TraitName -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Get-OKEffectiveTraitsForTraitName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKEffectiveTraitsForTraitName: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

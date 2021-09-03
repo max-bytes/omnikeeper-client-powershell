@@ -37,7 +37,7 @@ $AtTime = (Get-Date) # System.DateTime |  (optional)
 try {
     $Result = Search-OKCIsByTraits -LayerIDs $LayerIDs -WithTraits $WithTraits -WithoutTraits $WithoutTraits -Version $Version -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occured when calling Search-OKCIsByTraits: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Search-OKCIsByTraits: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

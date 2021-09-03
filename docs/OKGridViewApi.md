@@ -42,7 +42,7 @@ $AddContextRequest = Initialize-AddContextRequest -Id "MyId" -SpeakingName "MySp
 try {
     $Result = Add-OKContext -Version $Version -AddContextRequest $AddContextRequest
 } catch {
-    Write-Host ("Exception occured when calling Add-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Add-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -101,7 +101,7 @@ $ChangeDataRequest = Initialize-ChangeDataRequest -SparseRows $SparseRow # Chang
 try {
     $Result = Rename-OKData -Context $Context -Version $Version -ChangeDataRequest $ChangeDataRequest
 } catch {
-    Write-Host ("Exception occured when calling Rename-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Rename-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -154,7 +154,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Invoke-OKDeleteContext -Name $Name -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Invoke-OKDeleteContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKDeleteContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -211,7 +211,7 @@ $EditContextRequest = Initialize-EditContextRequest -SpeakingName "MySpeakingNam
 try {
     $Result = Edit-OKContext -Name $Name -Version $Version -EditContextRequest $EditContextRequest
 } catch {
-    Write-Host ("Exception occured when calling Edit-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Edit-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -264,7 +264,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKData -Context $Context -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -316,7 +316,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKGridViewContext -Name $Name -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKGridViewContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKGridViewContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -366,7 +366,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKGridViewContexts -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKGridViewContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKGridViewContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -417,7 +417,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKSchema -Context $Context -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKSchema: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKSchema: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

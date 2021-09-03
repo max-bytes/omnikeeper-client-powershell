@@ -35,7 +35,7 @@ $Files =  # System.IO.FileInfo[] |
 try {
     $Result = ConvertTo-OKgestXML -Version $Version -WriteLayerID $WriteLayerID -SearchLayerIDs $SearchLayerIDs -Files $Files
 } catch {
-    Write-Host ("Exception occured when calling ConvertTo-OKgestXML: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling ConvertTo-OKgestXML: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

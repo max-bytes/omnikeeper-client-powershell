@@ -33,7 +33,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKAllContexts -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKAllContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKAllContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -83,7 +83,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Get-OKContext -Id $Id -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Get-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Get-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -136,7 +136,7 @@ $Files =  # System.IO.FileInfo[] |
 try {
     $Result = ConvertTo-OKgest -Context $Context -Version $Version -Files $Files
 } catch {
-    Write-Host ("Exception occured when calling ConvertTo-OKgest: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling ConvertTo-OKgest: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -188,7 +188,7 @@ $Version = "MyVersion" # String |
 try {
     $Result = Remove-OKContext -Id $Id -Version $Version
 } catch {
-    Write-Host ("Exception occured when calling Remove-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Remove-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -240,7 +240,7 @@ $Context = Initialize-Context -Id "MyId" -ExtractConfig  -TransformConfig  -Load
 try {
     $Result = Invoke-OKUpsertContext -Version $Version -Context $Context
 } catch {
-    Write-Host ("Exception occured when calling Invoke-OKUpsertContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKUpsertContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
