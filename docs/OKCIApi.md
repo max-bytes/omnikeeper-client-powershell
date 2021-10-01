@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 # **Get-OKCIByID**
 > CIDTO Get-OKCIByID<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-CIID] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-CIID] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
 
@@ -79,7 +79,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $LayerIDs = "MyLayerIDs" # String[] | Specifies which layers contribute to the result, and in which order
-$CIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$CIID = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime | Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) (optional)
 
@@ -97,7 +97,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **LayerIDs** | [**String[]**](String.md)| Specifies which layers contribute to the result, and in which order | 
- **CIID** | [**String**](String.md)|  | 
+ **CIID** | **String**|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**| Specify datetime, for which point in time to get the data; leave empty to use current time (https://www.newtonsoft.com/json/help/html/DatesInJSON.htm) | [optional] 
 

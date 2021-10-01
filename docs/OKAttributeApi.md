@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 <a name="Get-OKMergedAttribute"></a>
 # **Get-OKMergedAttribute**
 > CIAttributeDTO Get-OKMergedAttribute<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
@@ -147,7 +147,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$Ciid = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
 $Name = "MyName" # String | 
 $LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
@@ -165,7 +165,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **Ciid** | [**String**](String.md)|  | 
+ **Ciid** | **String**|  | 
  **Name** | **String**|  | 
  **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 <a name="Get-OK"></a>
 # **Get-OK**
 > void Get-OK<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AttributeName] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
@@ -30,7 +30,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$Ciid = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
 $AttributeName = "MyAttributeName" # String | 
 $LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
@@ -49,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **Ciid** | [**String**](String.md)|  | 
+ **Ciid** | **String**|  | 
  **AttributeName** | **String**|  | 
  **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
@@ -74,7 +74,7 @@ void (empty response body)
 <a name="Submit-OK"></a>
 # **Submit-OK**
 > void Submit-OK<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AttributeName] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerID] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
@@ -93,7 +93,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$Ciid = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
 $AttributeName = "MyAttributeName" # String | 
 $LayerID = "MyLayerID" # String | 
 $Version = "MyVersion" # String | 
@@ -112,7 +112,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **Ciid** | [**String**](String.md)|  | 
+ **Ciid** | **String**|  | 
  **AttributeName** | **String**|  | 
  **LayerID** | **String**|  | 
  **Version** | **String**|  | 

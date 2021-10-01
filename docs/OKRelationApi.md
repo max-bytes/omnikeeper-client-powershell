@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 <a name="Get-OKMergedRelation"></a>
 # **Get-OKMergedRelation**
 > RelationDTO Get-OKMergedRelation<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FromCIID] <PSCustomObject><br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ToCIID] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FromCIID] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ToCIID] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-PredicateID] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
@@ -87,8 +87,8 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$FromCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
-$ToCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$FromCIID = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
+$ToCIID = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
 $PredicateID = "MyPredicateID" # String | 
 $LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
@@ -106,8 +106,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **FromCIID** | [**String**](String.md)|  | 
- **ToCIID** | [**String**](String.md)|  | 
+ **FromCIID** | **String**|  | 
+ **ToCIID** | **String**|  | 
  **PredicateID** | **String**|  | 
  **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 <a name="Get-OKMergedRelationsFromOrToCI"></a>
 # **Get-OKMergedRelationsFromOrToCI**
 > RelationDTO[] Get-OKMergedRelationsFromOrToCI<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
@@ -148,7 +148,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$Ciid = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$Ciid = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
 $LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
@@ -165,7 +165,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **Ciid** | [**String**](String.md)|  | 
+ **Ciid** | **String**|  | 
  **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 <a name="Get-OKMergedRelationsOutgoingFromCI"></a>
 # **Get-OKMergedRelationsOutgoingFromCI**
 > RelationDTO[] Get-OKMergedRelationsOutgoingFromCI<br>
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FromCIID] <PSCustomObject><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FromCIID] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AtTime] <System.Nullable[System.DateTime]><br>
@@ -205,7 +205,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 # Configure OAuth2 access token for authorization: oauth2
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
-$FromCIID = 38400000-8cf0-11bd-b23e-10b96e4ef00d # String | 
+$FromCIID = "38400000-8cf0-11bd-b23e-10b96e4ef00d" # String | 
 $LayerIDs = "MyLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
 $AtTime = (Get-Date) # System.DateTime |  (optional)
@@ -222,7 +222,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **FromCIID** | [**String**](String.md)|  | 
+ **FromCIID** | **String**|  | 
  **LayerIDs** | [**String[]**](String.md)|  | 
  **Version** | **String**|  | 
  **AtTime** | **System.DateTime**|  | [optional] 

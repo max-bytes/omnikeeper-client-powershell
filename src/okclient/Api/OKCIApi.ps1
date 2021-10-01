@@ -132,7 +132,7 @@ function Get-OKCIByID {
         [String[]]
         ${LayerIDs},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
-        [PSCustomObject]
+        [String]
         ${CIID},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
