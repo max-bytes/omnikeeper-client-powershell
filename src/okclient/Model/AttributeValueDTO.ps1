@@ -43,15 +43,15 @@ function Initialize-OKAttributeValueDTO {
         'Creating PSCustomObject: okclient => OKAttributeValueDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($Type -eq $null) {
+        if ($null -eq $Type) {
             throw "invalid value for 'Type', 'Type' cannot be null."
         }
 
-        if ($IsArray -eq $null) {
+        if ($null -eq $IsArray) {
             throw "invalid value for 'IsArray', 'IsArray' cannot be null."
         }
 
-        if ($Values -eq $null) {
+        if ($null -eq $Values) {
             throw "invalid value for 'Values', 'Values' cannot be null."
         }
 

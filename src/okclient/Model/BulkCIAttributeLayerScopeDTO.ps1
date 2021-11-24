@@ -43,15 +43,15 @@ function Initialize-OKBulkCIAttributeLayerScopeDTO {
         'Creating PSCustomObject: okclient => OKBulkCIAttributeLayerScopeDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($NamePrefix -eq $null) {
+        if ($null -eq $NamePrefix) {
             throw "invalid value for 'NamePrefix', 'NamePrefix' cannot be null."
         }
 
-        if ($LayerID -eq $null) {
+        if ($null -eq $LayerID) {
             throw "invalid value for 'LayerID', 'LayerID' cannot be null."
         }
 
-        if ($Fragments -eq $null) {
+        if ($null -eq $Fragments) {
             throw "invalid value for 'Fragments', 'Fragments' cannot be null."
         }
 

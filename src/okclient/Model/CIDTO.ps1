@@ -38,11 +38,11 @@ function Initialize-OKCIDTO {
         'Creating PSCustomObject: okclient => OKCIDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($Id -eq $null) {
+        if ($null -eq $Id) {
             throw "invalid value for 'Id', 'Id' cannot be null."
         }
 
-        if ($Attributes -eq $null) {
+        if ($null -eq $Attributes) {
             throw "invalid value for 'Attributes', 'Attributes' cannot be null."
         }
 

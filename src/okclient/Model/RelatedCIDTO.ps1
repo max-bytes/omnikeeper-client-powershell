@@ -43,15 +43,15 @@ function Initialize-OKRelatedCIDTO {
         'Creating PSCustomObject: okclient => OKRelatedCIDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($FromCIID -eq $null) {
+        if ($null -eq $FromCIID) {
             throw "invalid value for 'FromCIID', 'FromCIID' cannot be null."
         }
 
-        if ($ToCIID -eq $null) {
+        if ($null -eq $ToCIID) {
             throw "invalid value for 'ToCIID', 'ToCIID' cannot be null."
         }
 
-        if ($PredicateID -eq $null) {
+        if ($null -eq $PredicateID) {
             throw "invalid value for 'PredicateID', 'PredicateID' cannot be null."
         }
 

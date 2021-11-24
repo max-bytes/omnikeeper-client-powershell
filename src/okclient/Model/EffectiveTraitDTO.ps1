@@ -38,11 +38,11 @@ function Initialize-OKEffectiveTraitDTO {
         'Creating PSCustomObject: okclient => OKEffectiveTraitDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($TraitAttributes -eq $null) {
+        if ($null -eq $TraitAttributes) {
             throw "invalid value for 'TraitAttributes', 'TraitAttributes' cannot be null."
         }
 
-        if ($TraitRelations -eq $null) {
+        if ($null -eq $TraitRelations) {
             throw "invalid value for 'TraitRelations', 'TraitRelations' cannot be null."
         }
 

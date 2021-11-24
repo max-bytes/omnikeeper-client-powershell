@@ -53,23 +53,23 @@ function Initialize-OKRelationDTO {
         'Creating PSCustomObject: okclient => OKRelationDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($Id -eq $null) {
+        if ($null -eq $Id) {
             throw "invalid value for 'Id', 'Id' cannot be null."
         }
 
-        if ($FromCIID -eq $null) {
+        if ($null -eq $FromCIID) {
             throw "invalid value for 'FromCIID', 'FromCIID' cannot be null."
         }
 
-        if ($ToCIID -eq $null) {
+        if ($null -eq $ToCIID) {
             throw "invalid value for 'ToCIID', 'ToCIID' cannot be null."
         }
 
-        if ($PredicateID -eq $null) {
+        if ($null -eq $PredicateID) {
             throw "invalid value for 'PredicateID', 'PredicateID' cannot be null."
         }
 
-        if ($State -eq $null) {
+        if ($null -eq $State) {
             throw "invalid value for 'State', 'State' cannot be null."
         }
 

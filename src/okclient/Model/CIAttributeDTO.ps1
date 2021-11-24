@@ -53,23 +53,23 @@ function Initialize-OKCIAttributeDTO {
         'Creating PSCustomObject: okclient => OKCIAttributeDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($Id -eq $null) {
+        if ($null -eq $Id) {
             throw "invalid value for 'Id', 'Id' cannot be null."
         }
 
-        if ($Name -eq $null) {
+        if ($null -eq $Name) {
             throw "invalid value for 'Name', 'Name' cannot be null."
         }
 
-        if ($Value -eq $null) {
+        if ($null -eq $Value) {
             throw "invalid value for 'Value', 'Value' cannot be null."
         }
 
-        if ($Ciid -eq $null) {
+        if ($null -eq $Ciid) {
             throw "invalid value for 'Ciid', 'Ciid' cannot be null."
         }
 
-        if ($State -eq $null) {
+        if ($null -eq $State) {
             throw "invalid value for 'State', 'State' cannot be null."
         }
 

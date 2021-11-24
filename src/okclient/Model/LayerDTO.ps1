@@ -38,11 +38,11 @@ function Initialize-OKLayerDTO {
         'Creating PSCustomObject: okclient => OKLayerDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($Id -eq $null) {
+        if ($null -eq $Id) {
             throw "invalid value for 'Id', 'Id' cannot be null."
         }
 
-        if ($Description -eq $null) {
+        if ($null -eq $Description) {
             throw "invalid value for 'Description', 'Description' cannot be null."
         }
 

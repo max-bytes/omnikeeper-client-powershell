@@ -43,15 +43,15 @@ function Initialize-OKFragmentDTO {
         'Creating PSCustomObject: okclient => OKFragmentDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($Name -eq $null) {
+        if ($null -eq $Name) {
             throw "invalid value for 'Name', 'Name' cannot be null."
         }
 
-        if ($Value -eq $null) {
+        if ($null -eq $Value) {
             throw "invalid value for 'Value', 'Value' cannot be null."
         }
 
-        if ($Ciid -eq $null) {
+        if ($null -eq $Ciid) {
             throw "invalid value for 'Ciid', 'Ciid' cannot be null."
         }
 

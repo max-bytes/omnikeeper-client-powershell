@@ -48,19 +48,19 @@ function Initialize-OKAnsibleInventoryScanDTO {
         'Creating PSCustomObject: okclient => OKAnsibleInventoryScanDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
-        if ($SetupFacts -eq $null) {
+        if ($null -eq $SetupFacts) {
             throw "invalid value for 'SetupFacts', 'SetupFacts' cannot be null."
         }
 
-        if ($YumInstalled -eq $null) {
+        if ($null -eq $YumInstalled) {
             throw "invalid value for 'YumInstalled', 'YumInstalled' cannot be null."
         }
 
-        if ($YumRepos -eq $null) {
+        if ($null -eq $YumRepos) {
             throw "invalid value for 'YumRepos', 'YumRepos' cannot be null."
         }
 
-        if ($YumUpdates -eq $null) {
+        if ($null -eq $YumUpdates) {
             throw "invalid value for 'YumUpdates', 'YumUpdates' cannot be null."
         }
 
