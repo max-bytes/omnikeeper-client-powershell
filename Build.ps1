@@ -54,10 +54,10 @@ $Manifest = @{
     CompanyName = 'openapitools.org'
     Description = 'okclient - the PowerShell module for Landscape omnikeeper REST API'
 
-    ModuleVersion = '12.0.1'
+    ModuleVersion = '13.0.0-rc2'
 
     RootModule = 'okclient.psm1'
-    Guid = '{272C9408-08C4-4360-AA71-E10D2C03F5DB}' # Has to be static, otherwise each new build will be considered different module
+    Guid = '{E165AA7F-8CE2-4850-9147-762D82646B00}' # Has to be static, otherwise each new build will be considered different module
 
     PowerShellVersion = '6.2'
 
