@@ -105,7 +105,7 @@ No description available.
 Specifies which layers contribute to the result, and in which order
 
 .PARAMETER CIID
-No description available.
+
 
 .PARAMETER Version
 No description available.
@@ -224,7 +224,7 @@ No description available.
 Specifies which layers contribute to the result, and in which order
 
 .PARAMETER CIIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.

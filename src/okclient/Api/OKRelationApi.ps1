@@ -8,20 +8,20 @@
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
@@ -116,29 +116,29 @@ function Get-OKAllMergedRelations {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER FromCIID
-No description available.
+
 
 .PARAMETER ToCIID
-No description available.
+
 
 .PARAMETER PredicateID
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
@@ -257,23 +257,23 @@ function Get-OKMergedRelation {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER Ciid
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
@@ -376,23 +376,23 @@ function Get-OKMergedRelationsFromOrToCI {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER FromCIID
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
@@ -495,23 +495,23 @@ function Get-OKMergedRelationsOutgoingFromCI {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER PredicateID
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 

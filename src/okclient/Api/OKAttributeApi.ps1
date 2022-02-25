@@ -18,7 +18,7 @@ No description available.
 No description available.
 
 .PARAMETER BulkCIAttributeLayerScopeDTO
-No description available.
+
 
 .PARAMETER WithHttpInfo
 
@@ -95,26 +95,26 @@ function Invoke-OKBulkReplaceAttributesInLayer {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER Regex
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER Ciids
-No description available.
+
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
@@ -224,26 +224,26 @@ function Find-OKMergedAttributesByName {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER Ciid
-No description available.
+
 
 .PARAMETER Name
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
@@ -354,23 +354,23 @@ function Get-OKMergedAttribute {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER Ciids
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
@@ -473,23 +473,23 @@ function Get-OKMergedAttributes {
 <#
 .SYNOPSIS
 
-No summary available.
+
 
 .DESCRIPTION
 
 No description available.
 
 .PARAMETER Name
-No description available.
+
 
 .PARAMETER LayerIDs
-No description available.
+
 
 .PARAMETER Version
 No description available.
 
 .PARAMETER AtTime
-No description available.
+
 
 .PARAMETER ReturnType
 
