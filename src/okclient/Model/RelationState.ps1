@@ -8,77 +8,19 @@
 <#
 .SYNOPSIS
 
-No summary available.
+Enum RelationState.
 
 .DESCRIPTION
 
 No description available.
-
-.OUTPUTS
-
-RelationState<PSCustomObject>
 #>
 
-function Initialize-OKRelationState {
-    [CmdletBinding()]
-    Param (
-    )
-
-    Process {
-        'Creating PSCustomObject: okclient => OKRelationState' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-
-        $PSO = [PSCustomObject]@{
-        }
-
-
-        return $PSO
-    }
-}
-
-<#
-.SYNOPSIS
-
-Convert from JSON to RelationState<PSCustomObject>
-
-.DESCRIPTION
-
-Convert from JSON to RelationState<PSCustomObject>
-
-.PARAMETER Json
-
-Json object
-
-.OUTPUTS
-
-RelationState<PSCustomObject>
-#>
-function ConvertFrom-OKJsonToRelationState {
-    Param(
-        [AllowEmptyString()]
-        [string]$Json
-    )
-
-    Process {
-        'Converting JSON to PSCustomObject: okclient => OKRelationState' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $JsonParameters = ConvertFrom-Json -InputObject $Json
-
-        # check if Json contains properties not defined in OKRelationState
-        $AllProperties = @()
-        foreach ($name in $JsonParameters.PsObject.Properties.Name) {
-            if (!($AllProperties.Contains($name))) {
-                throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
-            }
-        }
-
-        $PSO = [PSCustomObject]@{
-        }
-
-        return $PSO
-    }
-
+enum RelationState {
+    # enum value: "New"
+    New
+    # enum value: "Removed"
+    Removed
+    # enum value: "Renewed"
+    Renewed
 }
 

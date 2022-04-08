@@ -8,77 +8,21 @@
 <#
 .SYNOPSIS
 
-No summary available.
+Enum AttributeState.
 
 .DESCRIPTION
 
 No description available.
-
-.OUTPUTS
-
-AttributeState<PSCustomObject>
 #>
 
-function Initialize-OKAttributeState {
-    [CmdletBinding()]
-    Param (
-    )
-
-    Process {
-        'Creating PSCustomObject: okclient => OKAttributeState' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-
-        $PSO = [PSCustomObject]@{
-        }
-
-
-        return $PSO
-    }
-}
-
-<#
-.SYNOPSIS
-
-Convert from JSON to AttributeState<PSCustomObject>
-
-.DESCRIPTION
-
-Convert from JSON to AttributeState<PSCustomObject>
-
-.PARAMETER Json
-
-Json object
-
-.OUTPUTS
-
-AttributeState<PSCustomObject>
-#>
-function ConvertFrom-OKJsonToAttributeState {
-    Param(
-        [AllowEmptyString()]
-        [string]$Json
-    )
-
-    Process {
-        'Converting JSON to PSCustomObject: okclient => OKAttributeState' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $JsonParameters = ConvertFrom-Json -InputObject $Json
-
-        # check if Json contains properties not defined in OKAttributeState
-        $AllProperties = @()
-        foreach ($name in $JsonParameters.PsObject.Properties.Name) {
-            if (!($AllProperties.Contains($name))) {
-                throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
-            }
-        }
-
-        $PSO = [PSCustomObject]@{
-        }
-
-        return $PSO
-    }
-
+enum AttributeState {
+    # enum value: "New"
+    New
+    # enum value: "Changed"
+    Changed
+    # enum value: "Removed"
+    Removed
+    # enum value: "Renewed"
+    Renewed
 }
 

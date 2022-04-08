@@ -8,77 +8,25 @@
 <#
 .SYNOPSIS
 
-No summary available.
+Enum AttributeValueType.
 
 .DESCRIPTION
 
 No description available.
-
-.OUTPUTS
-
-AttributeValueType<PSCustomObject>
 #>
 
-function Initialize-OKAttributeValueType {
-    [CmdletBinding()]
-    Param (
-    )
-
-    Process {
-        'Creating PSCustomObject: okclient => OKAttributeValueType' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-
-        $PSO = [PSCustomObject]@{
-        }
-
-
-        return $PSO
-    }
-}
-
-<#
-.SYNOPSIS
-
-Convert from JSON to AttributeValueType<PSCustomObject>
-
-.DESCRIPTION
-
-Convert from JSON to AttributeValueType<PSCustomObject>
-
-.PARAMETER Json
-
-Json object
-
-.OUTPUTS
-
-AttributeValueType<PSCustomObject>
-#>
-function ConvertFrom-OKJsonToAttributeValueType {
-    Param(
-        [AllowEmptyString()]
-        [string]$Json
-    )
-
-    Process {
-        'Converting JSON to PSCustomObject: okclient => OKAttributeValueType' | Write-Debug
-        $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        $JsonParameters = ConvertFrom-Json -InputObject $Json
-
-        # check if Json contains properties not defined in OKAttributeValueType
-        $AllProperties = @()
-        foreach ($name in $JsonParameters.PsObject.Properties.Name) {
-            if (!($AllProperties.Contains($name))) {
-                throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
-            }
-        }
-
-        $PSO = [PSCustomObject]@{
-        }
-
-        return $PSO
-    }
-
+enum AttributeValueType {
+    # enum value: "Text"
+    Text
+    # enum value: "MultilineText"
+    MultilineText
+    # enum value: "Integer"
+    Integer
+    # enum value: "JSON"
+    JSON
+    # enum value: "YAML"
+    YAML
+    # enum value: "Image"
+    Image
 }
 
