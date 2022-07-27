@@ -20,7 +20,6 @@ docs/GenericInboundRelation.md
 docs/GraphQLQuery.md
 docs/GridViewColumn.md
 docs/GridViewConfiguration.md
-docs/IAttributeValue.md
 docs/IEdmEntityContainer.md
 docs/IEdmEntityContainerElement.md
 docs/IEdmExpression.md
@@ -94,7 +93,6 @@ src/okclient/Model/GenericInboundRelation.ps1
 src/okclient/Model/GraphQLQuery.ps1
 src/okclient/Model/GridViewColumn.ps1
 src/okclient/Model/GridViewConfiguration.ps1
-src/okclient/Model/IAttributeValue.ps1
 src/okclient/Model/IEdmEntityContainer.ps1
 src/okclient/Model/IEdmEntityContainerElement.ps1
 src/okclient/Model/IEdmExpression.ps1

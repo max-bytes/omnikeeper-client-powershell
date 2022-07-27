@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **String** |  | [optional] 
-**Value** | [**IAttributeValue**](IAttributeValue.md) |  | [optional] 
+**Value** | [**AttributeValueDTO**](AttributeValueDTO.md) |  | [optional] 
 
 ## Examples
 
