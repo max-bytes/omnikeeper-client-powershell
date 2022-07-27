@@ -4,16 +4,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **OperationName** | **String** |  | [optional] 
-**NamedQuery** | **String** |  | [optional] 
 **Query** | **String** |  | [optional] 
-**Variables** | [**AnyType**](.md) |  | [optional] 
+**Variables** | [**System.Collections.Hashtable**](AnyType.md) |  | [optional] 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
 $GraphQLQuery = Initialize-okclientGraphQLQuery  -OperationName null `
- -NamedQuery null `
  -Query null `
  -Variables null
 ```

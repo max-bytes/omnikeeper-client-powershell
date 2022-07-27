@@ -14,7 +14,7 @@ No summary available.
 
 No description available.
 
-.PARAMETER Name
+.PARAMETER Id
 No description available.
 .PARAMETER Value
 No description available.
@@ -30,7 +30,7 @@ function Initialize-OKChangeDataCell {
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${Name},
+        ${Id},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject]
         ${Value},
@@ -45,7 +45,7 @@ function Initialize-OKChangeDataCell {
 
 
         $PSO = [PSCustomObject]@{
-            "name" = ${Name}
+            "id" = ${Id}
             "value" = ${Value}
             "changeable" = ${Changeable}
         }
@@ -85,17 +85,17 @@ function ConvertFrom-OKJsonToChangeDataCell {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKChangeDataCell
-        $AllProperties = ("name", "value", "changeable")
+        $AllProperties = ("id", "value", "changeable")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
             }
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "name"))) { #optional property not found
-            $Name = $null
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "id"))) { #optional property not found
+            $Id = $null
         } else {
-            $Name = $JsonParameters.PSobject.Properties["name"].value
+            $Id = $JsonParameters.PSobject.Properties["id"].value
         }
 
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "value"))) { #optional property not found
@@ -111,7 +111,7 @@ function ConvertFrom-OKJsonToChangeDataCell {
         }
 
         $PSO = [PSCustomObject]@{
-            "name" = ${Name}
+            "id" = ${Id}
             "value" = ${Value}
             "changeable" = ${Changeable}
         }

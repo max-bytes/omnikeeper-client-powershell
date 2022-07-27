@@ -16,8 +16,6 @@ No description available.
 
 .PARAMETER OperationName
 No description available.
-.PARAMETER NamedQuery
-No description available.
 .PARAMETER Query
 No description available.
 .PARAMETER Variables
@@ -35,12 +33,9 @@ function Initialize-OKGraphQLQuery {
         ${OperationName},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${NamedQuery},
-        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
-        [String]
         ${Query},
-        [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
-        [PSCustomObject]
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
+        [System.Collections.Hashtable]
         ${Variables}
     )
 
@@ -51,7 +46,6 @@ function Initialize-OKGraphQLQuery {
 
         $PSO = [PSCustomObject]@{
             "operationName" = ${OperationName}
-            "namedQuery" = ${NamedQuery}
             "query" = ${Query}
             "variables" = ${Variables}
         }
@@ -91,7 +85,7 @@ function ConvertFrom-OKJsonToGraphQLQuery {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKGraphQLQuery
-        $AllProperties = ("operationName", "namedQuery", "query", "variables")
+        $AllProperties = ("operationName", "query", "variables")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -102,12 +96,6 @@ function ConvertFrom-OKJsonToGraphQLQuery {
             $OperationName = $null
         } else {
             $OperationName = $JsonParameters.PSobject.Properties["operationName"].value
-        }
-
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "namedQuery"))) { #optional property not found
-            $NamedQuery = $null
-        } else {
-            $NamedQuery = $JsonParameters.PSobject.Properties["namedQuery"].value
         }
 
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "query"))) { #optional property not found
@@ -124,7 +112,6 @@ function ConvertFrom-OKJsonToGraphQLQuery {
 
         $PSO = [PSCustomObject]@{
             "operationName" = ${OperationName}
-            "namedQuery" = ${NamedQuery}
             "query" = ${Query}
             "variables" = ${Variables}
         }

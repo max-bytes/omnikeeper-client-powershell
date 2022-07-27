@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SourceAttributeName** | **String** |  | [optional] 
+**SourceAttributePath** | **String[]** |  | [optional] 
 **ColumnDescription** | **String** |  | [optional] 
 **ValueType** | [**AttributeValueType**](AttributeValueType.md) |  | [optional] 
 **WriteLayer** | **String** |  | [optional] 
@@ -13,6 +14,7 @@ Name | Type | Description | Notes
 - Prepare the resource
 ```powershell
 $GridViewColumn = Initialize-okclientGridViewColumn  -SourceAttributeName null `
+ -SourceAttributePath null `
  -ColumnDescription null `
  -ValueType null `
  -WriteLayer null

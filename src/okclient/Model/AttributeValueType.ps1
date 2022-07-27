@@ -28,5 +28,13 @@ enum AttributeValueType {
     YAML
     # enum value: "Image"
     Image
+    # enum value: "Mask"
+    Mask
+    # enum value: "Double"
+    Double
+    # enum value: "Boolean"
+    Boolean
+    # enum value: "DateTimeWithOffset"
+    DateTimeWithOffset
 }
 

@@ -34,7 +34,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function ConvertTo-OKgestAnsibleInventoryScan {
+function Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -54,7 +54,7 @@ function ConvertTo-OKgestAnsibleInventoryScan {
     )
 
     Process {
-        'Calling method: ConvertTo-OKgestAnsibleInventoryScan' | Write-Debug
+        'Calling method: Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -68,26 +68,26 @@ function ConvertTo-OKgestAnsibleInventoryScan {
 
         $Configuration = Get-OKConfiguration
         # HTTP header 'Content-Type'
-        $LocalVarContentTypes = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'application/json-patch+json', 'text/json', 'application/*+json')
+        $LocalVarContentTypes = @('application/json', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/xml', 'text/plain', 'text/json', 'application/*+json')
 
         $LocalVarUri = '/api/v{version}/Ingest/AnsibleInventoryScan'
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling ingestAnsibleInventoryScan."
+            throw "Error! The required parameter `Version` missing when calling ansibleInventoryScanIngestIngestAnsibleInventoryScan."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
         if (!$WriteLayerID) {
-            throw "Error! The required parameter `WriteLayerID` missing when calling ingestAnsibleInventoryScan."
+            throw "Error! The required parameter `WriteLayerID` missing when calling ansibleInventoryScanIngestIngestAnsibleInventoryScan."
         }
         $LocalVarQueryParameters['writeLayerID'] = $WriteLayerID
 
         if (!$SearchLayerIDs) {
-            throw "Error! The required parameter `SearchLayerIDs` missing when calling ingestAnsibleInventoryScan."
+            throw "Error! The required parameter `SearchLayerIDs` missing when calling ansibleInventoryScanIngestIngestAnsibleInventoryScan."
         }
         $LocalVarQueryParameters['searchLayerIDs'] = $SearchLayerIDs
 
         if (!$AnsibleInventoryScanDTO) {
-            throw "Error! The required parameter `AnsibleInventoryScanDTO` missing when calling ingestAnsibleInventoryScan."
+            throw "Error! The required parameter `AnsibleInventoryScanDTO` missing when calling ansibleInventoryScanIngestIngestAnsibleInventoryScan."
         }
 
         $LocalVarBodyParameter = $AnsibleInventoryScanDTO | ConvertTo-Json -Depth 100

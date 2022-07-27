@@ -3,9 +3,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | [**AttributeValueType**](AttributeValueType.md) |  | 
-**IsArray** | **Boolean** |  | 
-**Values** | **String[]** |  | 
+**Type** | [**AttributeValueType**](AttributeValueType.md) |  | [optional] 
+**IsArray** | **Boolean** |  | [optional] 
+**Values** | **String[]** |  | [optional] 
 
 ## Examples
 

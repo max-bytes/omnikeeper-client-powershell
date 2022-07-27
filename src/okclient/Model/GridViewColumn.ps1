@@ -16,6 +16,8 @@ No description available.
 
 .PARAMETER SourceAttributeName
 No description available.
+.PARAMETER SourceAttributePath
+No description available.
 .PARAMETER ColumnDescription
 No description available.
 .PARAMETER ValueType
@@ -34,12 +36,15 @@ function Initialize-OKGridViewColumn {
         [String]
         ${SourceAttributeName},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
+        [String[]]
+        ${SourceAttributePath},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${ColumnDescription},
-        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
+        [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject]
         ${ValueType},
-        [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
+        [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true)]
         [String]
         ${WriteLayer}
     )
@@ -51,6 +56,7 @@ function Initialize-OKGridViewColumn {
 
         $PSO = [PSCustomObject]@{
             "sourceAttributeName" = ${SourceAttributeName}
+            "sourceAttributePath" = ${SourceAttributePath}
             "columnDescription" = ${ColumnDescription}
             "valueType" = ${ValueType}
             "writeLayer" = ${WriteLayer}
@@ -91,7 +97,7 @@ function ConvertFrom-OKJsonToGridViewColumn {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKGridViewColumn
-        $AllProperties = ("sourceAttributeName", "columnDescription", "valueType", "writeLayer")
+        $AllProperties = ("sourceAttributeName", "sourceAttributePath", "columnDescription", "valueType", "writeLayer")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -102,6 +108,12 @@ function ConvertFrom-OKJsonToGridViewColumn {
             $SourceAttributeName = $null
         } else {
             $SourceAttributeName = $JsonParameters.PSobject.Properties["sourceAttributeName"].value
+        }
+
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "sourceAttributePath"))) { #optional property not found
+            $SourceAttributePath = $null
+        } else {
+            $SourceAttributePath = $JsonParameters.PSobject.Properties["sourceAttributePath"].value
         }
 
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "columnDescription"))) { #optional property not found
@@ -124,6 +136,7 @@ function ConvertFrom-OKJsonToGridViewColumn {
 
         $PSO = [PSCustomObject]@{
             "sourceAttributeName" = ${SourceAttributeName}
+            "sourceAttributePath" = ${SourceAttributePath}
             "columnDescription" = ${ColumnDescription}
             "valueType" = ${ValueType}
             "writeLayer" = ${WriteLayer}

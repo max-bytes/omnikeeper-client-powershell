@@ -40,7 +40,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Get-OK {
+function Invoke-OKAttributeValueImageGet {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -66,7 +66,7 @@ function Get-OK {
     )
 
     Process {
-        'Calling method: Get-OK' | Write-Debug
+        'Calling method: Invoke-OKAttributeValueImageGet' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -81,22 +81,22 @@ function Get-OK {
         $Configuration = Get-OKConfiguration
         $LocalVarUri = '/api/v{version}/AttributeValueImage'
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling get."
+            throw "Error! The required parameter `Version` missing when calling attributeValueImageGet."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
         if (!$Ciid) {
-            throw "Error! The required parameter `Ciid` missing when calling get."
+            throw "Error! The required parameter `Ciid` missing when calling attributeValueImageGet."
         }
         $LocalVarQueryParameters['ciid'] = $Ciid
 
         if (!$AttributeName) {
-            throw "Error! The required parameter `AttributeName` missing when calling get."
+            throw "Error! The required parameter `AttributeName` missing when calling attributeValueImageGet."
         }
         $LocalVarQueryParameters['attributeName'] = $AttributeName
 
         if (!$LayerIDs) {
-            throw "Error! The required parameter `LayerIDs` missing when calling get."
+            throw "Error! The required parameter `LayerIDs` missing when calling attributeValueImageGet."
         }
         $LocalVarQueryParameters['layerIDs'] = $LayerIDs
 
@@ -165,7 +165,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Submit-OK {
+function Invoke-OKAttributeValueImagePost {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -191,7 +191,7 @@ function Submit-OK {
     )
 
     Process {
-        'Calling method: Submit-OK' | Write-Debug
+        'Calling method: Invoke-OKAttributeValueImagePost' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -209,22 +209,22 @@ function Submit-OK {
 
         $LocalVarUri = '/api/v{version}/AttributeValueImage'
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling post."
+            throw "Error! The required parameter `Version` missing when calling attributeValueImagePost."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
         if (!$Ciid) {
-            throw "Error! The required parameter `Ciid` missing when calling post."
+            throw "Error! The required parameter `Ciid` missing when calling attributeValueImagePost."
         }
         $LocalVarQueryParameters['ciid'] = $Ciid
 
         if (!$AttributeName) {
-            throw "Error! The required parameter `AttributeName` missing when calling post."
+            throw "Error! The required parameter `AttributeName` missing when calling attributeValueImagePost."
         }
         $LocalVarQueryParameters['attributeName'] = $AttributeName
 
         if (!$LayerID) {
-            throw "Error! The required parameter `LayerID` missing when calling post."
+            throw "Error! The required parameter `LayerID` missing when calling attributeValueImagePost."
         }
         $LocalVarQueryParameters['layerID'] = $LayerID
 
@@ -233,7 +233,7 @@ function Submit-OK {
         }
 
         if (!$Files) {
-            throw "Error! The required parameter `Files` missing when calling post."
+            throw "Error! The required parameter `Files` missing when calling attributeValueImagePost."
         }
         $LocalVarFormParameters['files'] = $Files
 

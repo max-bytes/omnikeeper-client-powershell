@@ -1,15 +1,15 @@
 # okclient.okclient/Api.OKAnsibleInventoryScanIngestApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost:44378*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ConvertTo-OKgestAnsibleInventoryScan**](OKAnsibleInventoryScanIngestApi.md#ConvertTo-OKgestAnsibleInventoryScan) | **POST** /api/v{version}/Ingest/AnsibleInventoryScan | 
+[**Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan**](OKAnsibleInventoryScanIngestApi.md#Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan) | **POST** /api/v{version}/Ingest/AnsibleInventoryScan | 
 
 
-<a name="ConvertTo-OKgestAnsibleInventoryScan"></a>
-# **ConvertTo-OKgestAnsibleInventoryScan**
-> void ConvertTo-OKgestAnsibleInventoryScan<br>
+<a name="Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan"></a>
+# **Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan**
+> void Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-WriteLayerID] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-SearchLayerIDs] <String[]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
@@ -30,12 +30,12 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $WriteLayerID = "MyWriteLayerID" # String | 
 $SearchLayerIDs = "MySearchLayerIDs" # String[] | 
 $Version = "MyVersion" # String | 
-$AnsibleInventoryScanDTO = Initialize-AnsibleInventoryScanDTO -SetupFacts @{ key_example =  } -YumInstalled @{ key_example =  } -YumRepos @{ key_example =  } -YumUpdates @{ key_example =  } # AnsibleInventoryScanDTO | 
+$AnsibleInventoryScanDTO = Initialize-AnsibleInventoryScanDTO -SetupFacts @{ key_example = "MyInner" } -YumInstalled @{ key_example = "MyInner" } -YumRepos @{ key_example = "MyInner" } -YumUpdates @{ key_example = "MyInner" } # AnsibleInventoryScanDTO | 
 
 try {
-    $Result = ConvertTo-OKgestAnsibleInventoryScan -WriteLayerID $WriteLayerID -SearchLayerIDs $SearchLayerIDs -Version $Version -AnsibleInventoryScanDTO $AnsibleInventoryScanDTO
+    $Result = Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan -WriteLayerID $WriteLayerID -SearchLayerIDs $SearchLayerIDs -Version $Version -AnsibleInventoryScanDTO $AnsibleInventoryScanDTO
 } catch {
-    Write-Host ("Exception occurred when calling ConvertTo-OKgestAnsibleInventoryScan: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKAnsibleInventoryScanIngestIngestAnsibleInventoryScan: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -59,7 +59,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
+ - **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
  - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

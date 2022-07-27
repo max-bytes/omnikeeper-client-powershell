@@ -22,7 +22,7 @@ No description available.
 
 .PARAMETER ReturnType
 
-Select the return type (optional): application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+Select the return type (optional): application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 .PARAMETER WithHttpInfo
 
@@ -32,7 +32,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Add-OKContext {
+function Invoke-OKGridViewAddContext {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -42,14 +42,14 @@ function Add-OKContext {
         [PSCustomObject]
         ${AddContextRequest},
         [String]
-        [ValidateSet("application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json")]
+        [ValidateSet("application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json")]
         $ReturnType,
         [Switch]
         $WithHttpInfo
     )
 
     Process {
-        'Calling method: Add-OKContext' | Write-Debug
+        'Calling method: Invoke-OKGridViewAddContext' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -63,7 +63,7 @@ function Add-OKContext {
 
         $Configuration = Get-OKConfiguration
         # HTTP header 'Accept' (if needed)
-        $LocalVarAccepts = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'text/plain', 'text/json')
+        $LocalVarAccepts = @('application/json', 'application/xml', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'text/plain', 'application/octet-stream', 'text/json')
 
         if ($ReturnType) {
             # use the return type (MIME) provided by the user
@@ -71,11 +71,11 @@ function Add-OKContext {
         }
 
         # HTTP header 'Content-Type'
-        $LocalVarContentTypes = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'application/json-patch+json', 'text/json', 'application/*+json')
+        $LocalVarContentTypes = @('application/json', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/xml', 'text/plain', 'text/json', 'application/*+json')
 
         $LocalVarUri = '/api/v{version}/GridView/context'
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling addContext."
+            throw "Error! The required parameter `Version` missing when calling gridViewAddContext."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
@@ -123,7 +123,7 @@ No description available.
 
 .PARAMETER ReturnType
 
-Select the return type (optional): application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+Select the return type (optional): application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 .PARAMETER WithHttpInfo
 
@@ -133,7 +133,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Rename-OKData {
+function Invoke-OKGridViewChangeData {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -146,14 +146,14 @@ function Rename-OKData {
         [PSCustomObject]
         ${ChangeDataRequest},
         [String]
-        [ValidateSet("application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json")]
+        [ValidateSet("application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json")]
         $ReturnType,
         [Switch]
         $WithHttpInfo
     )
 
     Process {
-        'Calling method: Rename-OKData' | Write-Debug
+        'Calling method: Invoke-OKGridViewChangeData' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -167,7 +167,7 @@ function Rename-OKData {
 
         $Configuration = Get-OKConfiguration
         # HTTP header 'Accept' (if needed)
-        $LocalVarAccepts = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'text/plain', 'text/json')
+        $LocalVarAccepts = @('application/json', 'application/xml', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'text/plain', 'application/octet-stream', 'text/json')
 
         if ($ReturnType) {
             # use the return type (MIME) provided by the user
@@ -175,15 +175,15 @@ function Rename-OKData {
         }
 
         # HTTP header 'Content-Type'
-        $LocalVarContentTypes = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'application/json-patch+json', 'text/json', 'application/*+json')
+        $LocalVarContentTypes = @('application/json', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/xml', 'text/plain', 'text/json', 'application/*+json')
 
         $LocalVarUri = '/api/v{version}/GridView/contexts/{context}/change'
         if (!$Context) {
-            throw "Error! The required parameter `Context` missing when calling changeData."
+            throw "Error! The required parameter `Context` missing when calling gridViewChangeData."
         }
         $LocalVarUri = $LocalVarUri.replace('{context}', [System.Web.HTTPUtility]::UrlEncode($Context))
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling changeData."
+            throw "Error! The required parameter `Version` missing when calling gridViewChangeData."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
@@ -228,7 +228,7 @@ No description available.
 
 .PARAMETER ReturnType
 
-Select the return type (optional): application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+Select the return type (optional): application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 .PARAMETER WithHttpInfo
 
@@ -238,7 +238,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Invoke-OKDeleteContext {
+function Invoke-OKGridViewDeleteContext {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -248,14 +248,14 @@ function Invoke-OKDeleteContext {
         [String]
         ${Version},
         [String]
-        [ValidateSet("application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json")]
+        [ValidateSet("application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json")]
         $ReturnType,
         [Switch]
         $WithHttpInfo
     )
 
     Process {
-        'Calling method: Invoke-OKDeleteContext' | Write-Debug
+        'Calling method: Invoke-OKGridViewDeleteContext' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -269,7 +269,7 @@ function Invoke-OKDeleteContext {
 
         $Configuration = Get-OKConfiguration
         # HTTP header 'Accept' (if needed)
-        $LocalVarAccepts = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'text/plain', 'text/json')
+        $LocalVarAccepts = @('application/json', 'application/xml', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'text/plain', 'application/octet-stream', 'text/json')
 
         if ($ReturnType) {
             # use the return type (MIME) provided by the user
@@ -278,11 +278,11 @@ function Invoke-OKDeleteContext {
 
         $LocalVarUri = '/api/v{version}/GridView/context/{name}'
         if (!$Name) {
-            throw "Error! The required parameter `Name` missing when calling deleteContext."
+            throw "Error! The required parameter `Name` missing when calling gridViewDeleteContext."
         }
         $LocalVarUri = $LocalVarUri.replace('{name}', [System.Web.HTTPUtility]::UrlEncode($Name))
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling deleteContext."
+            throw "Error! The required parameter `Version` missing when calling gridViewDeleteContext."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
@@ -328,7 +328,7 @@ No description available.
 
 .PARAMETER ReturnType
 
-Select the return type (optional): application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+Select the return type (optional): application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 .PARAMETER WithHttpInfo
 
@@ -338,7 +338,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Edit-OKContext {
+function Invoke-OKGridViewEditContext {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -351,14 +351,14 @@ function Edit-OKContext {
         [PSCustomObject]
         ${EditContextRequest},
         [String]
-        [ValidateSet("application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "application/json", "application/xml", "application/odata", "text/plain", "text/json")]
+        [ValidateSet("application/json", "application/xml", "application/json;odata.metadata=minimal;odata.streaming=true", "application/json;odata.metadata=minimal;odata.streaming=false", "application/json;odata.metadata=minimal", "application/json;odata.metadata=full;odata.streaming=true", "application/json;odata.metadata=full;odata.streaming=false", "application/json;odata.metadata=full", "application/json;odata.metadata=none;odata.streaming=true", "application/json;odata.metadata=none;odata.streaming=false", "application/json;odata.metadata=none", "application/json;odata.streaming=true", "application/json;odata.streaming=false", "text/plain", "application/octet-stream", "text/json")]
         $ReturnType,
         [Switch]
         $WithHttpInfo
     )
 
     Process {
-        'Calling method: Edit-OKContext' | Write-Debug
+        'Calling method: Invoke-OKGridViewEditContext' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -372,7 +372,7 @@ function Edit-OKContext {
 
         $Configuration = Get-OKConfiguration
         # HTTP header 'Accept' (if needed)
-        $LocalVarAccepts = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'text/plain', 'text/json')
+        $LocalVarAccepts = @('application/json', 'application/xml', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'text/plain', 'application/octet-stream', 'text/json')
 
         if ($ReturnType) {
             # use the return type (MIME) provided by the user
@@ -380,15 +380,15 @@ function Edit-OKContext {
         }
 
         # HTTP header 'Content-Type'
-        $LocalVarContentTypes = @('application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/json', 'application/xml', 'application/odata', 'application/json-patch+json', 'text/json', 'application/*+json')
+        $LocalVarContentTypes = @('application/json', 'application/json;odata.metadata=minimal;odata.streaming=true', 'application/json;odata.metadata=minimal;odata.streaming=false', 'application/json;odata.metadata=minimal', 'application/json;odata.metadata=full;odata.streaming=true', 'application/json;odata.metadata=full;odata.streaming=false', 'application/json;odata.metadata=full', 'application/json;odata.metadata=none;odata.streaming=true', 'application/json;odata.metadata=none;odata.streaming=false', 'application/json;odata.metadata=none', 'application/json;odata.streaming=true', 'application/json;odata.streaming=false', 'application/xml', 'text/plain', 'text/json', 'application/*+json')
 
         $LocalVarUri = '/api/v{version}/GridView/context/{name}'
         if (!$Name) {
-            throw "Error! The required parameter `Name` missing when calling editContext."
+            throw "Error! The required parameter `Name` missing when calling gridViewEditContext."
         }
         $LocalVarUri = $LocalVarUri.replace('{name}', [System.Web.HTTPUtility]::UrlEncode($Name))
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling editContext."
+            throw "Error! The required parameter `Version` missing when calling gridViewEditContext."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
@@ -439,7 +439,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Get-OKData {
+function Invoke-OKGridViewGetData {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -453,7 +453,7 @@ function Get-OKData {
     )
 
     Process {
-        'Calling method: Get-OKData' | Write-Debug
+        'Calling method: Invoke-OKGridViewGetData' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -468,11 +468,11 @@ function Get-OKData {
         $Configuration = Get-OKConfiguration
         $LocalVarUri = '/api/v{version}/GridView/contexts/{context}/data'
         if (!$Context) {
-            throw "Error! The required parameter `Context` missing when calling getData."
+            throw "Error! The required parameter `Context` missing when calling gridViewGetData."
         }
         $LocalVarUri = $LocalVarUri.replace('{context}', [System.Web.HTTPUtility]::UrlEncode($Context))
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling getData."
+            throw "Error! The required parameter `Version` missing when calling gridViewGetData."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
@@ -521,7 +521,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Get-OKGridViewContext {
+function Invoke-OKGridViewGetGridViewContext {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -535,7 +535,7 @@ function Get-OKGridViewContext {
     )
 
     Process {
-        'Calling method: Get-OKGridViewContext' | Write-Debug
+        'Calling method: Invoke-OKGridViewGetGridViewContext' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -550,11 +550,11 @@ function Get-OKGridViewContext {
         $Configuration = Get-OKConfiguration
         $LocalVarUri = '/api/v{version}/GridView/context/{name}'
         if (!$Name) {
-            throw "Error! The required parameter `Name` missing when calling getGridViewContext."
+            throw "Error! The required parameter `Name` missing when calling gridViewGetGridViewContext."
         }
         $LocalVarUri = $LocalVarUri.replace('{name}', [System.Web.HTTPUtility]::UrlEncode($Name))
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling getGridViewContext."
+            throw "Error! The required parameter `Version` missing when calling gridViewGetGridViewContext."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
@@ -600,7 +600,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Get-OKGridViewContexts {
+function Invoke-OKGridViewGetGridViewContexts {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -611,7 +611,7 @@ function Get-OKGridViewContexts {
     )
 
     Process {
-        'Calling method: Get-OKGridViewContexts' | Write-Debug
+        'Calling method: Invoke-OKGridViewGetGridViewContexts' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -626,7 +626,7 @@ function Get-OKGridViewContexts {
         $Configuration = Get-OKConfiguration
         $LocalVarUri = '/api/v{version}/GridView/contexts'
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling getGridViewContexts."
+            throw "Error! The required parameter `Version` missing when calling gridViewGetGridViewContexts."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 
@@ -675,7 +675,7 @@ A switch when turned on will return a hash table of Response, StatusCode and Hea
 
 None
 #>
-function Get-OKSchema {
+function Invoke-OKGridViewGetSchema {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
@@ -689,7 +689,7 @@ function Get-OKSchema {
     )
 
     Process {
-        'Calling method: Get-OKSchema' | Write-Debug
+        'Calling method: Invoke-OKGridViewGetSchema' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $LocalVarAccepts = @()
@@ -704,11 +704,11 @@ function Get-OKSchema {
         $Configuration = Get-OKConfiguration
         $LocalVarUri = '/api/v{version}/GridView/contexts/{context}/schema'
         if (!$Context) {
-            throw "Error! The required parameter `Context` missing when calling getSchema."
+            throw "Error! The required parameter `Context` missing when calling gridViewGetSchema."
         }
         $LocalVarUri = $LocalVarUri.replace('{context}', [System.Web.HTTPUtility]::UrlEncode($Context))
         if (!$Version) {
-            throw "Error! The required parameter `Version` missing when calling getSchema."
+            throw "Error! The required parameter `Version` missing when calling gridViewGetSchema."
         }
         $LocalVarUri = $LocalVarUri.replace('{version}', [System.Web.HTTPUtility]::UrlEncode($Version))
 

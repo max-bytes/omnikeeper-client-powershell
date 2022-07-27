@@ -1,22 +1,22 @@
 # okclient.okclient/Api.OKGridViewApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost:44378*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Add-OKContext**](OKGridViewApi.md#Add-OKContext) | **POST** /api/v{version}/GridView/context | Adds new context
-[**Rename-OKData**](OKGridViewApi.md#Rename-OKData) | **POST** /api/v{version}/GridView/contexts/{context}/change | Saves grid view row changes and returns change results
-[**Invoke-OKDeleteContext**](OKGridViewApi.md#Invoke-OKDeleteContext) | **DELETE** /api/v{version}/GridView/context/{name} | Deletes specific context
-[**Edit-OKContext**](OKGridViewApi.md#Edit-OKContext) | **PUT** /api/v{version}/GridView/context/{name} | Edits specific context
-[**Get-OKData**](OKGridViewApi.md#Get-OKData) | **GET** /api/v{version}/GridView/contexts/{context}/data | Returns grid view data for specific context
-[**Get-OKGridViewContext**](OKGridViewApi.md#Get-OKGridViewContext) | **GET** /api/v{version}/GridView/context/{name} | Returns a single context in full
-[**Get-OKGridViewContexts**](OKGridViewApi.md#Get-OKGridViewContexts) | **GET** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
-[**Get-OKSchema**](OKGridViewApi.md#Get-OKSchema) | **GET** /api/v{version}/GridView/contexts/{context}/schema | Returns grid view schema for specific context
+[**Invoke-OKGridViewAddContext**](OKGridViewApi.md#Invoke-OKGridViewAddContext) | **POST** /api/v{version}/GridView/context | Adds new context
+[**Invoke-OKGridViewChangeData**](OKGridViewApi.md#Invoke-OKGridViewChangeData) | **POST** /api/v{version}/GridView/contexts/{context}/change | Saves grid view row changes and returns change results
+[**Invoke-OKGridViewDeleteContext**](OKGridViewApi.md#Invoke-OKGridViewDeleteContext) | **DELETE** /api/v{version}/GridView/context/{name} | Deletes specific context
+[**Invoke-OKGridViewEditContext**](OKGridViewApi.md#Invoke-OKGridViewEditContext) | **PUT** /api/v{version}/GridView/context/{name} | Edits specific context
+[**Invoke-OKGridViewGetData**](OKGridViewApi.md#Invoke-OKGridViewGetData) | **GET** /api/v{version}/GridView/contexts/{context}/data | Returns grid view data for specific context
+[**Invoke-OKGridViewGetGridViewContext**](OKGridViewApi.md#Invoke-OKGridViewGetGridViewContext) | **GET** /api/v{version}/GridView/context/{name} | Returns a single context in full
+[**Invoke-OKGridViewGetGridViewContexts**](OKGridViewApi.md#Invoke-OKGridViewGetGridViewContexts) | **GET** /api/v{version}/GridView/contexts | Returns a list of contexts for grid view.
+[**Invoke-OKGridViewGetSchema**](OKGridViewApi.md#Invoke-OKGridViewGetSchema) | **GET** /api/v{version}/GridView/contexts/{context}/schema | Returns grid view schema for specific context
 
 
-<a name="Add-OKContext"></a>
-# **Add-OKContext**
-> void Add-OKContext<br>
+<a name="Invoke-OKGridViewAddContext"></a>
+# **Invoke-OKGridViewAddContext**
+> void Invoke-OKGridViewAddContext<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AddContextRequest] <PSCustomObject><br>
 
@@ -33,16 +33,16 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Version = "MyVersion" # String | 
-$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer "MyWriteLayer"
+$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -SourceAttributePath "MySourceAttributePath" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer "MyWriteLayer"
 $GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer "MyWriteLayer" -ReadLayerset "MyReadLayerset" -Columns $GridViewColumn -Trait "MyTrait"
 
 $AddContextRequest = Initialize-AddContextRequest -Id "MyId" -SpeakingName "MySpeakingName" -Description "MyDescription" -Configuration $GridViewConfiguration # AddContextRequest |  (optional)
 
 # Adds new context
 try {
-    $Result = Add-OKContext -Version $Version -AddContextRequest $AddContextRequest
+    $Result = Invoke-OKGridViewAddContext -Version $Version -AddContextRequest $AddContextRequest
 } catch {
-    Write-Host ("Exception occurred when calling Add-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewAddContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -64,14 +64,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
- - **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+ - **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
+ - **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Rename-OKData"></a>
-# **Rename-OKData**
-> void Rename-OKData<br>
+<a name="Invoke-OKGridViewChangeData"></a>
+# **Invoke-OKGridViewChangeData**
+> void Invoke-OKGridViewChangeData<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Context] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ChangeDataRequest] <PSCustomObject><br>
@@ -91,7 +91,7 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $Context = "MyContext" # String | 
 $Version = "MyVersion" # String | 
 $AttributeValueDTO = Initialize-AttributeValueDTO -Type "Text" -IsArray $false -Values "MyValues"
-$ChangeDataCell = Initialize-ChangeDataCell -Name "MyName" -Value $AttributeValueDTO -Changeable $false
+$ChangeDataCell = Initialize-ChangeDataCell -Id "MyId" -Value $AttributeValueDTO -Changeable $false
 
 $SparseRow = Initialize-SparseRow -Ciid "MyCiid" -Cells $ChangeDataCell
 
@@ -99,9 +99,9 @@ $ChangeDataRequest = Initialize-ChangeDataRequest -SparseRows $SparseRow # Chang
 
 # Saves grid view row changes and returns change results
 try {
-    $Result = Rename-OKData -Context $Context -Version $Version -ChangeDataRequest $ChangeDataRequest
+    $Result = Invoke-OKGridViewChangeData -Context $Context -Version $Version -ChangeDataRequest $ChangeDataRequest
 } catch {
-    Write-Host ("Exception occurred when calling Rename-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewChangeData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -124,14 +124,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
- - **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+ - **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
+ - **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Invoke-OKDeleteContext"></a>
-# **Invoke-OKDeleteContext**
-> void Invoke-OKDeleteContext<br>
+<a name="Invoke-OKGridViewDeleteContext"></a>
+# **Invoke-OKGridViewDeleteContext**
+> void Invoke-OKGridViewDeleteContext<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 
@@ -152,9 +152,9 @@ $Version = "MyVersion" # String |
 
 # Deletes specific context
 try {
-    $Result = Invoke-OKDeleteContext -Name $Name -Version $Version
+    $Result = Invoke-OKGridViewDeleteContext -Name $Name -Version $Version
 } catch {
-    Write-Host ("Exception occurred when calling Invoke-OKDeleteContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewDeleteContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -177,13 +177,13 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+ - **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Edit-OKContext"></a>
-# **Edit-OKContext**
-> void Edit-OKContext<br>
+<a name="Invoke-OKGridViewEditContext"></a>
+# **Invoke-OKGridViewEditContext**
+> void Invoke-OKGridViewEditContext<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-EditContextRequest] <PSCustomObject><br>
@@ -202,16 +202,16 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 
 $Name = "MyName" # String | 
 $Version = "MyVersion" # String | 
-$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer "MyWriteLayer"
+$GridViewColumn = Initialize-GridViewColumn -SourceAttributeName "MySourceAttributeName" -SourceAttributePath "MySourceAttributePath" -ColumnDescription "MyColumnDescription" -ValueType "Text" -WriteLayer "MyWriteLayer"
 $GridViewConfiguration = Initialize-GridViewConfiguration -ShowCIIDColumn $false -WriteLayer "MyWriteLayer" -ReadLayerset "MyReadLayerset" -Columns $GridViewColumn -Trait "MyTrait"
 
 $EditContextRequest = Initialize-EditContextRequest -SpeakingName "MySpeakingName" -Description "MyDescription" -Configuration $GridViewConfiguration # EditContextRequest |  (optional)
 
 # Edits specific context
 try {
-    $Result = Edit-OKContext -Name $Name -Version $Version -EditContextRequest $EditContextRequest
+    $Result = Invoke-OKGridViewEditContext -Name $Name -Version $Version -EditContextRequest $EditContextRequest
 } catch {
-    Write-Host ("Exception occurred when calling Edit-OKContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewEditContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -234,14 +234,14 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, application/json-patch+json, text/json, application/*+json
- - **Accept**: application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/json, application/xml, application/odata, text/plain, text/json
+ - **Content-Type**: application/json, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, application/xml, text/plain, text/json, application/*+json
+ - **Accept**: application/json, application/xml, application/json;odata.metadata=minimal;odata.streaming=true, application/json;odata.metadata=minimal;odata.streaming=false, application/json;odata.metadata=minimal, application/json;odata.metadata=full;odata.streaming=true, application/json;odata.metadata=full;odata.streaming=false, application/json;odata.metadata=full, application/json;odata.metadata=none;odata.streaming=true, application/json;odata.metadata=none;odata.streaming=false, application/json;odata.metadata=none, application/json;odata.streaming=true, application/json;odata.streaming=false, text/plain, application/octet-stream, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Get-OKData"></a>
-# **Get-OKData**
-> void Get-OKData<br>
+<a name="Invoke-OKGridViewGetData"></a>
+# **Invoke-OKGridViewGetData**
+> void Invoke-OKGridViewGetData<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Context] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 
@@ -262,9 +262,9 @@ $Version = "MyVersion" # String |
 
 # Returns grid view data for specific context
 try {
-    $Result = Get-OKData -Context $Context -Version $Version
+    $Result = Invoke-OKGridViewGetData -Context $Context -Version $Version
 } catch {
-    Write-Host ("Exception occurred when calling Get-OKData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewGetData: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -291,9 +291,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Get-OKGridViewContext"></a>
-# **Get-OKGridViewContext**
-> void Get-OKGridViewContext<br>
+<a name="Invoke-OKGridViewGetGridViewContext"></a>
+# **Invoke-OKGridViewGetGridViewContext**
+> void Invoke-OKGridViewGetGridViewContext<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 
@@ -314,9 +314,9 @@ $Version = "MyVersion" # String |
 
 # Returns a single context in full
 try {
-    $Result = Get-OKGridViewContext -Name $Name -Version $Version
+    $Result = Invoke-OKGridViewGetGridViewContext -Name $Name -Version $Version
 } catch {
-    Write-Host ("Exception occurred when calling Get-OKGridViewContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewGetGridViewContext: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -343,9 +343,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Get-OKGridViewContexts"></a>
-# **Get-OKGridViewContexts**
-> void Get-OKGridViewContexts<br>
+<a name="Invoke-OKGridViewGetGridViewContexts"></a>
+# **Invoke-OKGridViewGetGridViewContexts**
+> void Invoke-OKGridViewGetGridViewContexts<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 
 Returns a list of contexts for grid view.
@@ -364,9 +364,9 @@ $Version = "MyVersion" # String |
 
 # Returns a list of contexts for grid view.
 try {
-    $Result = Get-OKGridViewContexts -Version $Version
+    $Result = Invoke-OKGridViewGetGridViewContexts -Version $Version
 } catch {
-    Write-Host ("Exception occurred when calling Get-OKGridViewContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewGetGridViewContexts: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -392,9 +392,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Get-OKSchema"></a>
-# **Get-OKSchema**
-> void Get-OKSchema<br>
+<a name="Invoke-OKGridViewGetSchema"></a>
+# **Invoke-OKGridViewGetSchema**
+> void Invoke-OKGridViewGetSchema<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Context] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 
@@ -415,9 +415,9 @@ $Version = "MyVersion" # String |
 
 # Returns grid view schema for specific context
 try {
-    $Result = Get-OKSchema -Context $Context -Version $Version
+    $Result = Invoke-OKGridViewGetSchema -Context $Context -Version $Version
 } catch {
-    Write-Host ("Exception occurred when calling Get-OKSchema: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKGridViewGetSchema: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

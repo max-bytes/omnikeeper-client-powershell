@@ -23,7 +23,7 @@ function Get-OKConfiguration {
     $Configuration = $Script:Configuration
 
     if ([string]::IsNullOrEmpty($Configuration["BaseUrl"])) {
-        $Configuration["BaseUrl"] = "http://localhost";
+        $Configuration["BaseUrl"] = "https://localhost:44378";
     }
 
     if (!$Configuration.containsKey("Username")) {
@@ -312,7 +312,7 @@ System.Collections.Hashtable[]
 function Get-OKHostSetting {
     return ,@(
           @{
-            "Url" = "";
+            "Url" = "https://localhost:44378";
             "Description" = "No description provided";
           }
     )

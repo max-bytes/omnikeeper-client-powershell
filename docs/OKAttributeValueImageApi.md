@@ -1,16 +1,16 @@
 # okclient.okclient/Api.OKAttributeValueImageApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://localhost:44378*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Get-OK**](OKAttributeValueImageApi.md#Get-OK) | **GET** /api/v{version}/AttributeValueImage | 
-[**Submit-OK**](OKAttributeValueImageApi.md#Submit-OK) | **POST** /api/v{version}/AttributeValueImage | 
+[**Invoke-OKAttributeValueImageGet**](OKAttributeValueImageApi.md#Invoke-OKAttributeValueImageGet) | **GET** /api/v{version}/AttributeValueImage | 
+[**Invoke-OKAttributeValueImagePost**](OKAttributeValueImageApi.md#Invoke-OKAttributeValueImagePost) | **POST** /api/v{version}/AttributeValueImage | 
 
 
-<a name="Get-OK"></a>
-# **Get-OK**
-> void Get-OK<br>
+<a name="Invoke-OKAttributeValueImageGet"></a>
+# **Invoke-OKAttributeValueImageGet**
+> void Invoke-OKAttributeValueImageGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AttributeName] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>
@@ -38,9 +38,9 @@ $Index = 56 # Int32 |  (optional) (default to 0)
 $AtTime = (Get-Date) # System.DateTime |  (optional)
 
 try {
-    $Result = Get-OK -Ciid $Ciid -AttributeName $AttributeName -LayerIDs $LayerIDs -Version $Version -Index $Index -AtTime $AtTime
+    $Result = Invoke-OKAttributeValueImageGet -Ciid $Ciid -AttributeName $AttributeName -LayerIDs $LayerIDs -Version $Version -Index $Index -AtTime $AtTime
 } catch {
-    Write-Host ("Exception occurred when calling Get-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKAttributeValueImageGet: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```
@@ -71,9 +71,9 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Submit-OK"></a>
-# **Submit-OK**
-> void Submit-OK<br>
+<a name="Invoke-OKAttributeValueImagePost"></a>
+# **Invoke-OKAttributeValueImagePost**
+> void Invoke-OKAttributeValueImagePost<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Ciid] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-AttributeName] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerID] <String><br>
@@ -101,9 +101,9 @@ $Files =  # System.IO.FileInfo[] |
 $ForceArray = $true # Boolean |  (optional) (default to $false)
 
 try {
-    $Result = Submit-OK -Ciid $Ciid -AttributeName $AttributeName -LayerID $LayerID -Version $Version -Files $Files -ForceArray $ForceArray
+    $Result = Invoke-OKAttributeValueImagePost -Ciid $Ciid -AttributeName $AttributeName -LayerID $LayerID -Version $Version -Files $Files -ForceArray $ForceArray
 } catch {
-    Write-Host ("Exception occurred when calling Submit-OK: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
+    Write-Host ("Exception occurred when calling Invoke-OKAttributeValueImagePost: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
 }
 ```

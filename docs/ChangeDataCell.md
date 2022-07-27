@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **String** |  | [optional] 
+**Id** | **String** |  | [optional] 
 **Value** | [**AttributeValueDTO**](AttributeValueDTO.md) |  | [optional] 
 **Changeable** | **Boolean** |  | [optional] 
 
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 
 - Prepare the resource
 ```powershell
-$ChangeDataCell = Initialize-okclientChangeDataCell  -Name null `
+$ChangeDataCell = Initialize-okclientChangeDataCell  -Id null `
  -Value null `
  -Changeable null
 ```

@@ -32,7 +32,7 @@ function Initialize-OKAttributeValueDTO {
         [PSCustomObject]
         ${Type},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
-        [Boolean]
+        [System.Nullable[Boolean]]
         ${IsArray},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
         [String[]]
@@ -42,18 +42,6 @@ function Initialize-OKAttributeValueDTO {
     Process {
         'Creating PSCustomObject: okclient => OKAttributeValueDTO' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
-
-        if ($null -eq $Type) {
-            throw "invalid value for 'Type', 'Type' cannot be null."
-        }
-
-        if ($null -eq $IsArray) {
-            throw "invalid value for 'IsArray', 'IsArray' cannot be null."
-        }
-
-        if ($null -eq $Values) {
-            throw "invalid value for 'Values', 'Values' cannot be null."
-        }
 
 
         $PSO = [PSCustomObject]@{
@@ -104,24 +92,20 @@ function ConvertFrom-OKJsonToAttributeValueDTO {
             }
         }
 
-        If ([string]::IsNullOrEmpty($Json) -or $Json -eq "{}") { # empty json
-            throw "Error! Empty JSON cannot be serialized due to the required property 'type' missing."
-        }
-
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "type"))) {
-            throw "Error! JSON cannot be serialized due to the required property 'type' missing."
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "type"))) { #optional property not found
+            $Type = $null
         } else {
             $Type = $JsonParameters.PSobject.Properties["type"].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "isArray"))) {
-            throw "Error! JSON cannot be serialized due to the required property 'isArray' missing."
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "isArray"))) { #optional property not found
+            $IsArray = $null
         } else {
             $IsArray = $JsonParameters.PSobject.Properties["isArray"].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "values"))) {
-            throw "Error! JSON cannot be serialized due to the required property 'values' missing."
+        if (!([bool]($JsonParameters.PSobject.Properties.name -match "values"))) { #optional property not found
+            $Values = $null
         } else {
             $Values = $JsonParameters.PSobject.Properties["values"].value
         }
