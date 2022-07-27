@@ -3,15 +3,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **String** |  | [optional] [readonly] 
 **Attributes** | **String[]** |  | [optional] 
+**Type** | **String** |  | 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
-$InboundIDMethodByData = Initialize-okclientInboundIDMethodByData  -Type null `
- -Attributes null
+$InboundIDMethodByData = Initialize-okclientInboundIDMethodByData  -Attributes null `
+ -Type null
 ```
 
 - Convert the resource to JSON

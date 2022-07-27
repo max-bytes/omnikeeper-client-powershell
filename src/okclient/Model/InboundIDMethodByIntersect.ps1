@@ -14,9 +14,9 @@ No summary available.
 
 No description available.
 
-.PARAMETER Type
-No description available.
 .PARAMETER Inner
+No description available.
+.PARAMETER Type
 No description available.
 .OUTPUTS
 
@@ -27,11 +27,11 @@ function Initialize-OKInboundIDMethodByIntersect {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
-        ${Type},
-        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject[]]
-        ${Inner}
+        ${Inner},
+        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${Type}
     )
 
     Process {
@@ -40,8 +40,8 @@ function Initialize-OKInboundIDMethodByIntersect {
 
 
         $PSO = [PSCustomObject]@{
-            "type" = ${Type}
             "inner" = ${Inner}
+            "type" = ${Type}
         }
 
 
@@ -79,7 +79,7 @@ function ConvertFrom-OKJsonToInboundIDMethodByIntersect {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKInboundIDMethodByIntersect
-        $AllProperties = ("type", "inner")
+        $AllProperties = ("inner", "type")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -96,12 +96,6 @@ function ConvertFrom-OKJsonToInboundIDMethodByIntersect {
             $Type = $JsonParameters.PSobject.Properties["type"].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "type"))) { #optional property not found
-            $Type = $null
-        } else {
-            $Type = $JsonParameters.PSobject.Properties["type"].value
-        }
-
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "inner"))) { #optional property not found
             $Inner = $null
         } else {
@@ -109,8 +103,8 @@ function ConvertFrom-OKJsonToInboundIDMethodByIntersect {
         }
 
         $PSO = [PSCustomObject]@{
-            "type" = ${Type}
             "inner" = ${Inner}
+            "type" = ${Type}
         }
 
         return $PSO

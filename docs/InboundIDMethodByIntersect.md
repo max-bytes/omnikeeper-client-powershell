@@ -3,15 +3,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **String** |  | [optional] [readonly] 
 **Inner** | [**OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect[]**](OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect.md) |  | [optional] 
+**Type** | **String** |  | 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
-$InboundIDMethodByIntersect = Initialize-okclientInboundIDMethodByIntersect  -Type null `
- -Inner null
+$InboundIDMethodByIntersect = Initialize-okclientInboundIDMethodByIntersect  -Inner null `
+ -Type null
 ```
 
 - Convert the resource to JSON

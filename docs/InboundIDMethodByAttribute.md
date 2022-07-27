@@ -3,17 +3,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **String** |  | [optional] [readonly] 
 **Attribute** | [**GenericInboundAttribute**](GenericInboundAttribute.md) |  | [optional] 
 **Modifiers** | [**InboundIDMethodByAttributeModifiers**](InboundIDMethodByAttributeModifiers.md) |  | [optional] 
+**Type** | **String** |  | 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
-$InboundIDMethodByAttribute = Initialize-okclientInboundIDMethodByAttribute  -Type null `
- -Attribute null `
- -Modifiers null
+$InboundIDMethodByAttribute = Initialize-okclientInboundIDMethodByAttribute  -Attribute null `
+ -Modifiers null `
+ -Type null
 ```
 
 - Convert the resource to JSON

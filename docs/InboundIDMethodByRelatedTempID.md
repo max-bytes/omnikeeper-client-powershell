@@ -3,19 +3,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **String** |  | [optional] [readonly] 
 **TempID** | **String** |  | [optional] 
 **OutgoingRelation** | **Boolean** |  | [optional] 
 **PredicateID** | **String** |  | [optional] 
+**Type** | **String** |  | 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
-$InboundIDMethodByRelatedTempID = Initialize-okclientInboundIDMethodByRelatedTempID  -Type null `
- -TempID null `
+$InboundIDMethodByRelatedTempID = Initialize-okclientInboundIDMethodByRelatedTempID  -TempID null `
  -OutgoingRelation null `
- -PredicateID null
+ -PredicateID null `
+ -Type null
 ```
 
 - Convert the resource to JSON

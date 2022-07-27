@@ -3,15 +3,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **String** |  | [optional] [readonly] 
 **TempID** | **String** |  | [optional] 
+**Type** | **String** |  | 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
-$InboundIDMethodByTemporaryCIID = Initialize-okclientInboundIDMethodByTemporaryCIID  -Type null `
- -TempID null
+$InboundIDMethodByTemporaryCIID = Initialize-okclientInboundIDMethodByTemporaryCIID  -TempID null `
+ -Type null
 ```
 
 - Convert the resource to JSON

@@ -14,11 +14,11 @@ No summary available.
 
 No description available.
 
-.PARAMETER Type
-No description available.
 .PARAMETER Attribute
 No description available.
 .PARAMETER Modifiers
+No description available.
+.PARAMETER Type
 No description available.
 .OUTPUTS
 
@@ -29,14 +29,14 @@ function Initialize-OKInboundIDMethodByAttribute {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
-        [String]
-        ${Type},
-        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject]
         ${Attribute},
-        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
+        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
         [PSCustomObject]
-        ${Modifiers}
+        ${Modifiers},
+        [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
+        [String]
+        ${Type}
     )
 
     Process {
@@ -45,9 +45,9 @@ function Initialize-OKInboundIDMethodByAttribute {
 
 
         $PSO = [PSCustomObject]@{
-            "type" = ${Type}
             "attribute" = ${Attribute}
             "modifiers" = ${Modifiers}
+            "type" = ${Type}
         }
 
 
@@ -85,7 +85,7 @@ function ConvertFrom-OKJsonToInboundIDMethodByAttribute {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKInboundIDMethodByAttribute
-        $AllProperties = ("type", "attribute", "modifiers")
+        $AllProperties = ("attribute", "modifiers", "type")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -98,12 +98,6 @@ function ConvertFrom-OKJsonToInboundIDMethodByAttribute {
 
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "type"))) {
             throw "Error! JSON cannot be serialized due to the required property 'type' missing."
-        } else {
-            $Type = $JsonParameters.PSobject.Properties["type"].value
-        }
-
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "type"))) { #optional property not found
-            $Type = $null
         } else {
             $Type = $JsonParameters.PSobject.Properties["type"].value
         }
@@ -121,9 +115,9 @@ function ConvertFrom-OKJsonToInboundIDMethodByAttribute {
         }
 
         $PSO = [PSCustomObject]@{
-            "type" = ${Type}
             "attribute" = ${Attribute}
             "modifiers" = ${Modifiers}
+            "type" = ${Type}
         }
 
         return $PSO

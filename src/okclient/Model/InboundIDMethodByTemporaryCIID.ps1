@@ -14,9 +14,9 @@ No summary available.
 
 No description available.
 
-.PARAMETER Type
-No description available.
 .PARAMETER TempID
+No description available.
+.PARAMETER Type
 No description available.
 .OUTPUTS
 
@@ -28,10 +28,10 @@ function Initialize-OKInboundIDMethodByTemporaryCIID {
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${Type},
+        ${TempID},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${TempID}
+        ${Type}
     )
 
     Process {
@@ -40,8 +40,8 @@ function Initialize-OKInboundIDMethodByTemporaryCIID {
 
 
         $PSO = [PSCustomObject]@{
-            "type" = ${Type}
             "tempID" = ${TempID}
+            "type" = ${Type}
         }
 
 
@@ -79,7 +79,7 @@ function ConvertFrom-OKJsonToInboundIDMethodByTemporaryCIID {
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
         # check if Json contains properties not defined in OKInboundIDMethodByTemporaryCIID
-        $AllProperties = ("type", "tempID")
+        $AllProperties = ("tempID", "type")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -96,12 +96,6 @@ function ConvertFrom-OKJsonToInboundIDMethodByTemporaryCIID {
             $Type = $JsonParameters.PSobject.Properties["type"].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "type"))) { #optional property not found
-            $Type = $null
-        } else {
-            $Type = $JsonParameters.PSobject.Properties["type"].value
-        }
-
         if (!([bool]($JsonParameters.PSobject.Properties.name -match "tempID"))) { #optional property not found
             $TempID = $null
         } else {
@@ -109,8 +103,8 @@ function ConvertFrom-OKJsonToInboundIDMethodByTemporaryCIID {
         }
 
         $PSO = [PSCustomObject]@{
-            "type" = ${Type}
             "tempID" = ${TempID}
+            "type" = ${Type}
         }
 
         return $PSO

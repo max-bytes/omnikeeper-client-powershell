@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **String** |  | [readonly] 
+**Type** | **String** |  | 
 
 ## Examples
 
