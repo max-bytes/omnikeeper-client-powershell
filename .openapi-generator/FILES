@@ -127,4 +127,3 @@ src/okclient/Private/OKRSAEncryptionProvider.cs
 src/okclient/Private/Out-DebugParameter.ps1
 src/okclient/en-US/about_okclient.help.txt
 src/okclient/okclient.psm1
-tests/Model/AbstractInboundIDMethod.Tests.ps1
