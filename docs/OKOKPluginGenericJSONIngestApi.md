@@ -236,14 +236,10 @@ $Configuration.AccessToken = "YOUR_ACCESS_TOKEN"
 $ReadLayerIDs = "MyReadLayerIDs" # String[] | 
 $WriteLayerID = "MyWriteLayerID" # String | 
 $Version = "MyVersion" # String | 
+$GenericInboundCIIdMethod = Initialize-GenericInboundCIIdMethod -Type "MyType" -CaseInsensitive $false
+
 $AttributeValueDTO = Initialize-AttributeValueDTO -Type "Text" -IsArray $false -Values "MyValues"
 $GenericInboundAttribute = Initialize-GenericInboundAttribute -Name "MyName" -Value $AttributeValueDTO
-
-$InboundIDMethodByAttributeModifiers = Initialize-InboundIDMethodByAttributeModifiers -CaseInsensitive $false
-
-$InboundIDMethodByByUnionInnerInner = Initialize-InboundIDMethodByByUnionInnerInner -Type "MyType" -Attributes "MyAttributes" -CaseInsensitive $false -Attribute $GenericInboundAttribute -Modifiers $InboundIDMethodByAttributeModifiers -TempID "MyTempID" -OutgoingRelation $false -PredicateID "MyPredicateID" -Inner $InboundIDMethodByByUnionInnerInner
-
-$GenericInboundCIIdMethod = Initialize-GenericInboundCIIdMethod -Type "MyType" -Attributes "MyAttributes" -CaseInsensitive $false -Attribute $GenericInboundAttribute -Modifiers $InboundIDMethodByAttributeModifiers -TempID "MyTempID" -OutgoingRelation $false -PredicateID "MyPredicateID" -Inner $InboundIDMethodByByUnionInnerInner
 
 $GenericInboundCI = Initialize-GenericInboundCI -TempID "MyTempID" -IdMethod $GenericInboundCIIdMethod -SameTempIDHandling "DropAndWarn" -SameTargetCIHandling "Error" -NoFoundTargetCIHandling "CreateNew" -Attributes $GenericInboundAttribute
 

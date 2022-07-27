@@ -1,6 +1,7 @@
 Build.ps1
 README.md
 appveyor.yml
+docs/AbstractInboundIDMethod.md
 docs/AddContextRequest.md
 docs/AnsibleInventoryScanDTO.md
 docs/AttributeValueDTO.md
@@ -32,7 +33,6 @@ docs/IEdmVocabularyAnnotation.md
 docs/InboundIDMethodByAttribute.md
 docs/InboundIDMethodByAttributeModifiers.md
 docs/InboundIDMethodByByUnion.md
-docs/InboundIDMethodByByUnionInnerInner.md
 docs/InboundIDMethodByData.md
 docs/InboundIDMethodByIntersect.md
 docs/InboundIDMethodByRelatedTempID.md
@@ -74,6 +74,7 @@ src/okclient/Api/OKOKPluginInsightDiscoveryIngestApi.ps1
 src/okclient/Api/OKRestartApplicationApi.ps1
 src/okclient/Api/OKUsageStatsApi.ps1
 src/okclient/Client/OKConfiguration.ps1
+src/okclient/Model/AbstractInboundIDMethod.ps1
 src/okclient/Model/AddContextRequest.ps1
 src/okclient/Model/AnsibleInventoryScanDTO.ps1
 src/okclient/Model/AttributeValueDTO.ps1
@@ -105,7 +106,6 @@ src/okclient/Model/IEdmVocabularyAnnotation.ps1
 src/okclient/Model/InboundIDMethodByAttribute.ps1
 src/okclient/Model/InboundIDMethodByAttributeModifiers.ps1
 src/okclient/Model/InboundIDMethodByByUnion.ps1
-src/okclient/Model/InboundIDMethodByByUnionInnerInner.ps1
 src/okclient/Model/InboundIDMethodByData.ps1
 src/okclient/Model/InboundIDMethodByIntersect.ps1
 src/okclient/Model/InboundIDMethodByRelatedTempID.ps1
@@ -127,3 +127,4 @@ src/okclient/Private/OKRSAEncryptionProvider.cs
 src/okclient/Private/Out-DebugParameter.ps1
 src/okclient/en-US/about_okclient.help.txt
 src/okclient/okclient.psm1
+tests/Model/AbstractInboundIDMethod.Tests.ps1

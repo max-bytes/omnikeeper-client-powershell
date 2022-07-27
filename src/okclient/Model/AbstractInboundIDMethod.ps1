@@ -16,32 +16,26 @@ No description available.
 
 .PARAMETER Type
 No description available.
-.PARAMETER Attributes
-No description available.
 .OUTPUTS
 
-InboundIDMethodByData<PSCustomObject>
+AbstractInboundIDMethod<PSCustomObject>
 #>
 
-function Initialize-OKInboundIDMethodByData {
+function Initialize-OKAbstractInboundIDMethod {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
         [String]
-        ${Type},
-        [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
-        [String[]]
-        ${Attributes}
+        ${Type}
     )
 
     Process {
-        'Creating PSCustomObject: okclient => OKInboundIDMethodByData' | Write-Debug
+        'Creating PSCustomObject: okclient => OKAbstractInboundIDMethod' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
 
         $PSO = [PSCustomObject]@{
             "type" = ${Type}
-            "attributes" = ${Attributes}
         }
 
 
@@ -52,11 +46,11 @@ function Initialize-OKInboundIDMethodByData {
 <#
 .SYNOPSIS
 
-Convert from JSON to InboundIDMethodByData<PSCustomObject>
+Convert from JSON to AbstractInboundIDMethod<PSCustomObject>
 
 .DESCRIPTION
 
-Convert from JSON to InboundIDMethodByData<PSCustomObject>
+Convert from JSON to AbstractInboundIDMethod<PSCustomObject>
 
 .PARAMETER Json
 
@@ -64,22 +58,22 @@ Json object
 
 .OUTPUTS
 
-InboundIDMethodByData<PSCustomObject>
+AbstractInboundIDMethod<PSCustomObject>
 #>
-function ConvertFrom-OKJsonToInboundIDMethodByData {
+function ConvertFrom-OKJsonToAbstractInboundIDMethod {
     Param(
         [AllowEmptyString()]
         [string]$Json
     )
 
     Process {
-        'Converting JSON to PSCustomObject: okclient => OKInboundIDMethodByData' | Write-Debug
+        'Converting JSON to PSCustomObject: okclient => OKAbstractInboundIDMethod' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $JsonParameters = ConvertFrom-Json -InputObject $Json
 
-        # check if Json contains properties not defined in OKInboundIDMethodByData
-        $AllProperties = ("type", "attributes")
+        # check if Json contains properties not defined in OKAbstractInboundIDMethod
+        $AllProperties = ("type")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
             if (!($AllProperties.Contains($name))) {
                 throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
@@ -96,21 +90,8 @@ function ConvertFrom-OKJsonToInboundIDMethodByData {
             $Type = $JsonParameters.PSobject.Properties["type"].value
         }
 
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "type"))) { #optional property not found
-            $Type = $null
-        } else {
-            $Type = $JsonParameters.PSobject.Properties["type"].value
-        }
-
-        if (!([bool]($JsonParameters.PSobject.Properties.name -match "attributes"))) { #optional property not found
-            $Attributes = $null
-        } else {
-            $Attributes = $JsonParameters.PSobject.Properties["attributes"].value
-        }
-
         $PSO = [PSCustomObject]@{
             "type" = ${Type}
-            "attributes" = ${Attributes}
         }
 
         return $PSO
