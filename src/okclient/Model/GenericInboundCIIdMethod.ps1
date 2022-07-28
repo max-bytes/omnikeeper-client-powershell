@@ -34,15 +34,6 @@ function ConvertFrom-OKJsonToGenericInboundCIIdMethod {
         $matchType = $null
         $matchInstance = $null
 
-        # nullable check
-        if ([string]::IsNullOrEmpty($Json) -or $Json -eq "{}") {
-            return [PSCustomObject]@{
-                "ActualType" = $null
-                "ActualInstance" = $null
-                "OneOfSchemas" = @("InboundIDMethodByAttribute", "InboundIDMethodByAttributeModifiers", "InboundIDMethodByByUnion", "InboundIDMethodByData", "InboundIDMethodByIntersect", "InboundIDMethodByRelatedTempID", "InboundIDMethodByTemporaryCIID")
-            }
-        }
-
         # try to match InboundIDMethodByAttribute defined in the oneOf schemas
         try {
             $matchInstance = ConvertFrom-OKJsonToInboundIDMethodByAttribute $Json

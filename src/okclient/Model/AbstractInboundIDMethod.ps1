@@ -33,6 +33,10 @@ function Initialize-OKAbstractInboundIDMethod {
         'Creating PSCustomObject: okclient => OKAbstractInboundIDMethod' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
+        if ($null -eq $Type) {
+            throw "invalid value for 'Type', 'Type' cannot be null."
+        }
+
 
         $PSO = [PSCustomObject]@{
             "type" = ${Type}

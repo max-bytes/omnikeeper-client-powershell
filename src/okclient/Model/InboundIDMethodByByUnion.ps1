@@ -38,6 +38,10 @@ function Initialize-OKInboundIDMethodByByUnion {
         'Creating PSCustomObject: okclient => OKInboundIDMethodByByUnion' | Write-Debug
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
+        if ($null -eq $Type) {
+            throw "invalid value for 'Type', 'Type' cannot be null."
+        }
+
 
         $PSO = [PSCustomObject]@{
             "inner" = ${Inner}
