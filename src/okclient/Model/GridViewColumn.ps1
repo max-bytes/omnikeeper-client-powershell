@@ -42,6 +42,7 @@ function Initialize-OKGridViewColumn {
         [String]
         ${ColumnDescription},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("Text", "MultilineText", "Integer", "JSON", "YAML", "Image", "Mask", "Double", "Boolean", "DateTimeWithOffset")]
         [PSCustomObject]
         ${ValueType},
         [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true)]

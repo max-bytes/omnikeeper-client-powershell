@@ -25,6 +25,7 @@ function Initialize-OKIEdmType {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("None", "Primitive", "Entity", "Complex", "Collection", "EntityReference", "Enum", "TypeDefinition", "Untyped", "Path")]
         [PSCustomObject]
         ${TypeKind}
     )

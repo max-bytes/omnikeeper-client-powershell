@@ -29,6 +29,7 @@ function Initialize-OKIEdmSchemaElement {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("None", "TypeDefinition", "Term", "Action", "EntityContainer", "Function")]
         [PSCustomObject]
         ${SchemaElementKind},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]

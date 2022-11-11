@@ -29,6 +29,7 @@ function Initialize-OKIEdmEntityContainerElement {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("None", "EntitySet", "ActionImport", "FunctionImport", "Singleton")]
         [PSCustomObject]
         ${ContainerElementKind},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]

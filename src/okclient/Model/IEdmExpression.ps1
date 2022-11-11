@@ -25,6 +25,7 @@ function Initialize-OKIEdmExpression {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("None", "BinaryConstant", "BooleanConstant", "DateTimeOffsetConstant", "DecimalConstant", "FloatingConstant", "GuidConstant", "IntegerConstant", "StringConstant", "DurationConstant", "Null", "Record", "Collection", "Path", "If", "Cast", "IsType", "FunctionApplication", "LabeledExpressionReference", "Labeled", "PropertyPath", "NavigationPropertyPath", "DateConstant", "TimeOfDayConstant", "EnumMember", "AnnotationPath")]
         [PSCustomObject]
         ${ExpressionKind}
     )

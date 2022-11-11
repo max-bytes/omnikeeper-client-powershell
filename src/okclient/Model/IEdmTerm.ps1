@@ -44,6 +44,7 @@ function Initialize-OKIEdmTerm {
         [String]
         ${DefaultValue},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("None", "TypeDefinition", "Term", "Action", "EntityContainer", "Function")]
         [PSCustomObject]
         ${SchemaElementKind},
         [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true)]

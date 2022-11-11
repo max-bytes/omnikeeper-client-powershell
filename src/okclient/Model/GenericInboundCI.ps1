@@ -41,12 +41,15 @@ function Initialize-OKGenericInboundCI {
         [PSCustomObject]
         ${IdMethod},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("DropAndWarn", "Drop")]
         [PSCustomObject]
         ${SameTempIDHandling},
         [Parameter(Position = 3, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("Error", "Drop", "DropAndWarn", "Evade", "EvadeAndWarn", "Merge")]
         [PSCustomObject]
         ${SameTargetCIHandling},
         [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("CreateNew", "CreateNewAndWarn", "Drop")]
         [PSCustomObject]
         ${NoFoundTargetCIHandling},
         [Parameter(Position = 5, ValueFromPipelineByPropertyName = $true)]

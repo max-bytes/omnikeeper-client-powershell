@@ -29,6 +29,7 @@ function Initialize-OKAttributeValueDTO {
     [CmdletBinding()]
     Param (
         [Parameter(Position = 0, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("Text", "MultilineText", "Integer", "JSON", "YAML", "Image", "Mask", "Double", "Boolean", "DateTimeWithOffset")]
         [PSCustomObject]
         ${Type},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]

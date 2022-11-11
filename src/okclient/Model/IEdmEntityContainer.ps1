@@ -34,6 +34,7 @@ function Initialize-OKIEdmEntityContainer {
         [PSCustomObject[]]
         ${Elements},
         [Parameter(Position = 1, ValueFromPipelineByPropertyName = $true)]
+        [ValidateSet("None", "TypeDefinition", "Term", "Action", "EntityContainer", "Function")]
         [PSCustomObject]
         ${SchemaElementKind},
         [Parameter(Position = 2, ValueFromPipelineByPropertyName = $true)]
