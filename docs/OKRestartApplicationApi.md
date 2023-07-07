@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Restart-OKApplicationRestart**](OKRestartApplicationApi.md#Restart-OKApplicationRestart) | **GET** /api/v{version}/RestartApplication/restart | 
 
 
-<a name="Restart-OKApplicationRestart"></a>
+<a id="Restart-OKApplicationRestart"></a>
 # **Restart-OKApplicationRestart**
 > void Restart-OKApplicationRestart<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**Invoke-OKGraphQLIndex**](OKGraphQLApi.md#Invoke-OKGraphQLIndex) | **POST** /graphql | 
 
 
-<a name="Invoke-OKGraphQLDebug"></a>
+<a id="Invoke-OKGraphQLDebug"></a>
 # **Invoke-OKGraphQLDebug**
 > void Invoke-OKGraphQLDebug<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-GraphQLQuery] <PSCustomObject><br>
@@ -57,7 +57,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Invoke-OKGraphQLGet"></a>
+<a id="Invoke-OKGraphQLGet"></a>
 # **Invoke-OKGraphQLGet**
 > void Invoke-OKGraphQLGet<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-OperationName] <String><br>
@@ -111,7 +111,7 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Invoke-OKGraphQLIndex"></a>
+<a id="Invoke-OKGraphQLIndex"></a>
 # **Invoke-OKGraphQLIndex**
 > void Invoke-OKGraphQLIndex<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-GraphQLQuery] <PSCustomObject><br>

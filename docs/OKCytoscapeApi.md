@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Invoke-OKCytoscapeTraitCentric**](OKCytoscapeApi.md#Invoke-OKCytoscapeTraitCentric) | **GET** /api/v{version}/Cytoscape/traitCentric | 
 
 
-<a name="Invoke-OKCytoscapeTraitCentric"></a>
+<a id="Invoke-OKCytoscapeTraitCentric"></a>
 # **Invoke-OKCytoscapeTraitCentric**
 > void Invoke-OKCytoscapeTraitCentric<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-LayerIDs] <String[]><br>

@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Invoke-OKUsageStatsFetch**](OKUsageStatsApi.md#Invoke-OKUsageStatsFetch) | **GET** /api/v{version}/UsageStats/fetch | 
 
 
-<a name="Invoke-OKUsageStatsFetch"></a>
+<a id="Invoke-OKUsageStatsFetch"></a>
 # **Invoke-OKUsageStatsFetch**
 > void Invoke-OKUsageStatsFetch<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-From] <System.DateTime><br>

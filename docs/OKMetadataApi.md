@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**Invoke-OKMetadataGetServiceDocument**](OKMetadataApi.md#Invoke-OKMetadataGetServiceDocument) | **GET** /api/odata/{context} | 
 
 
-<a name="Invoke-OKMetadataGetMetadata"></a>
+<a id="Invoke-OKMetadataGetMetadata"></a>
 # **Invoke-OKMetadataGetMetadata**
 > IEdmModel Invoke-OKMetadataGetMetadata<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Context] <String><br>
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="Invoke-OKMetadataGetServiceDocument"></a>
+<a id="Invoke-OKMetadataGetServiceDocument"></a>
 # **Invoke-OKMetadataGetServiceDocument**
 > ODataServiceDocument Invoke-OKMetadataGetServiceDocument<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Context] <String><br>

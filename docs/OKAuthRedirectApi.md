@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Invoke-OKAuthRedirectIndex**](OKAuthRedirectApi.md#Invoke-OKAuthRedirectIndex) | **GET** /.well-known/openid-configuration | 
 
 
-<a name="Invoke-OKAuthRedirectIndex"></a>
+<a id="Invoke-OKAuthRedirectIndex"></a>
 # **Invoke-OKAuthRedirectIndex**
 > void Invoke-OKAuthRedirectIndex<br>
 
