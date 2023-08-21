@@ -95,12 +95,14 @@ function ConvertFrom-OKJsonToProblemDetails {
         $PSBoundParameters | Out-DebugParameter | Write-Debug
 
         $JsonParameters = ConvertFrom-Json -InputObject $Json
+        $OKProblemDetailsAdditionalProperties = @{}
 
         # check if Json contains properties not defined in OKProblemDetails
         $AllProperties = ("type", "title", "status", "detail", "instance")
         foreach ($name in $JsonParameters.PsObject.Properties.Name) {
+            # store undefined properties in additionalProperties
             if (!($AllProperties.Contains($name))) {
-                throw "Error! JSON key '$name' not found in the properties: $($AllProperties)"
+                $OKProblemDetailsAdditionalProperties[$name] = $JsonParameters.PSobject.Properties[$name].value
             }
         }
 
@@ -140,6 +142,7 @@ function ConvertFrom-OKJsonToProblemDetails {
             "status" = ${Status}
             "detail" = ${Detail}
             "instance" = ${Instance}
+            "AdditionalProperties" = $OKProblemDetailsAdditionalProperties
         }
 
         return $PSO
