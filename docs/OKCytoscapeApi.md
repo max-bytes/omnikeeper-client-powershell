@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKCytoscapeApi
+# okclient.okclient\Api.OKCytoscapeApi
 
 All URIs are relative to *http://localhost*
 

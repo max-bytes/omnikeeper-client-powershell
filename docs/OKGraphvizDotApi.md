@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKGraphvizDotApi
+# okclient.okclient\Api.OKGraphvizDotApi
 
 All URIs are relative to *http://localhost*
 

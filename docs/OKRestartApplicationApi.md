@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKRestartApplicationApi
+# okclient.okclient\Api.OKRestartApplicationApi
 
 All URIs are relative to *http://localhost*
 

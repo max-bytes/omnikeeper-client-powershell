@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKUsageStatsApi
+# okclient.okclient\Api.OKUsageStatsApi
 
 All URIs are relative to *http://localhost*
 

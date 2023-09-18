@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKAuthRedirectApi
+# okclient.okclient\Api.OKAuthRedirectApi
 
 All URIs are relative to *http://localhost*
 

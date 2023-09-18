@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKGridViewApi
+# okclient.okclient\Api.OKGridViewApi
 
 All URIs are relative to *http://localhost*
 

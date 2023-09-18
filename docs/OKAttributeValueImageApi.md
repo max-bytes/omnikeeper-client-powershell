@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKAttributeValueImageApi
+# okclient.okclient\Api.OKAttributeValueImageApi
 
 All URIs are relative to *http://localhost*
 

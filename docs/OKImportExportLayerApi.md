@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKImportExportLayerApi
+# okclient.okclient\Api.OKImportExportLayerApi
 
 All URIs are relative to *http://localhost*
 

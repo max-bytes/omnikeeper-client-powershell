@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKOKPluginInsightDiscoveryIngestApi
+# okclient.okclient\Api.OKOKPluginInsightDiscoveryIngestApi
 
 All URIs are relative to *http://localhost*
 

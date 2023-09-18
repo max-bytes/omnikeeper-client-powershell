@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKAnsibleInventoryScanIngestApi
+# okclient.okclient\Api.OKAnsibleInventoryScanIngestApi
 
 All URIs are relative to *http://localhost*
 

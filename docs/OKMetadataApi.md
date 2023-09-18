@@ -1,4 +1,4 @@
-# okclient.okclient/Api.OKMetadataApi
+# okclient.okclient\Api.OKMetadataApi
 
 All URIs are relative to *http://localhost*
 
