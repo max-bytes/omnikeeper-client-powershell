@@ -26,6 +26,9 @@ No description available.
 .PARAMETER ContentDisposition
 No description available.
 
+.PARAMETER Headers
+No description available.
+
 .PARAMETER Length
 No description available.
 
@@ -59,12 +62,15 @@ function ConvertTo-OKgestFileIngest {
         [String]
         ${ContentDisposition},
         [Parameter(Position = 4, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [System.Collections.Hashtable]
+        ${Headers},
+        [Parameter(Position = 5, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [System.Nullable[Int64]]
         ${Length},
-        [Parameter(Position = 5, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [Parameter(Position = 6, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${Name},
-        [Parameter(Position = 6, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
+        [Parameter(Position = 7, ValueFromPipelineByPropertyName = $true, Mandatory = $false)]
         [String]
         ${FileName},
         [Switch]
@@ -105,6 +111,10 @@ function ConvertTo-OKgestFileIngest {
 
         if ($ContentDisposition) {
             $LocalVarFormParameters['ContentDisposition'] = $ContentDisposition
+        }
+
+        if ($Headers) {
+            $LocalVarFormParameters['Headers'] = $Headers
         }
 
         if ($Length) {

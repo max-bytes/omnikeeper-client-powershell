@@ -14,6 +14,7 @@ Method | HTTP request | Description
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Version] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ContentType] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-ContentDisposition] <String><br>
+> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Headers] <System.Collections.Hashtable><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Length] <System.Nullable[Int64]><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-Name] <String><br>
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[-FileName] <String><br>
@@ -34,12 +35,13 @@ $Context = "MyContext" # String |
 $Version = "MyVersion" # String | 
 $ContentType = "MyContentType" # String |  (optional)
 $ContentDisposition = "MyContentDisposition" # String |  (optional)
+$Headers = @{ key_example = ... } # System.Collections.Hashtable |  (optional)
 $Length = 789 # Int64 |  (optional)
 $Name = "MyName" # String |  (optional)
 $FileName = "MyFileName" # String |  (optional)
 
 try {
-    $Result = ConvertTo-OKgestFileIngest -Context $Context -Version $Version -ContentType $ContentType -ContentDisposition $ContentDisposition -Length $Length -Name $Name -FileName $FileName
+    $Result = ConvertTo-OKgestFileIngest -Context $Context -Version $Version -ContentType $ContentType -ContentDisposition $ContentDisposition -Headers $Headers -Length $Length -Name $Name -FileName $FileName
 } catch {
     Write-Host ("Exception occurred when calling ConvertTo-OKgestFileIngest: {0}" -f ($_.ErrorDetails | ConvertFrom-Json))
     Write-Host ("Response headers: {0}" -f ($_.Exception.Response.Headers | ConvertTo-Json))
@@ -54,6 +56,7 @@ Name | Type | Description  | Notes
  **Version** | **String**|  | 
  **ContentType** | **String**|  | [optional] 
  **ContentDisposition** | **String**|  | [optional] 
+ **Headers** | [**System.Collections.Hashtable**](System.Collections.Hashtable.md)|  | [optional] 
  **Length** | **Int64**|  | [optional] 
  **Name** | **String**|  | [optional] 
  **FileName** | **String**|  | [optional] 
