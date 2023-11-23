@@ -45,7 +45,9 @@ function Get-FunctionsToExport {
 }
 
 $ScriptDir = Split-Path $script:MyInvocation.MyCommand.Path
-$FunctionPath = 'Api', 'Model', 'Client' | ForEach-Object {Join-Path "$ScriptDir\src\okclient\" $_}
+$FunctionPath = 'Api', 'Model', 'Client' | Where-Object {
+    Join-Path "$ScriptDir\src\okclient\" $_ | Test-Path
+} | ForEach-Object { Join-Path "$ScriptDir\src\okclient\" $_ }
 
 $Manifest = @{
     Path = "$ScriptDir\src\okclient\okclient.psd1"
@@ -54,10 +56,10 @@ $Manifest = @{
     CompanyName = 'openapitools.org'
     Description = 'okclient - the PowerShell module for Landscape omnikeeper REST API'
 
-    ModuleVersion = '29.4.0'
+    ModuleVersion = '29.5.0'
 
     RootModule = 'okclient.psm1'
-    Guid = '{4B799AB7-F0B3-4589-BF67-53185B97FB94}' # Has to be static, otherwise each new build will be considered different module
+    Guid = '{CCE529C5-AA94-4E13-A100-F33C86ECCD58}' # Has to be static, otherwise each new build will be considered different module
 
     PowerShellVersion = '6.2'
 
