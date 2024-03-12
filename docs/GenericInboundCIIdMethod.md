@@ -3,15 +3,29 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Attributes** | **String[]** |  | [optional] 
 **Type** | **String** |  | 
 **CaseInsensitive** | **Boolean** |  | [optional] 
+**Attribute** | [**GenericInboundAttribute**](GenericInboundAttribute.md) |  | [optional] 
+**Modifiers** | [**InboundIDMethodByAttributeModifiers**](InboundIDMethodByAttributeModifiers.md) |  | [optional] 
+**TempID** | **String** |  | [optional] 
+**OutgoingRelation** | **Boolean** |  | [optional] 
+**PredicateID** | **String** |  | [optional] 
+**Inner** | [**OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect[]**](OneOfInboundIDMethodByDataInboundIDMethodByAttributeModifiersInboundIDMethodByAttributeInboundIDMethodByRelatedTempIDInboundIDMethodByTemporaryCIIDInboundIDMethodByByUnionInboundIDMethodByIntersect.md) |  | [optional] 
 
 ## Examples
 
 - Prepare the resource
 ```powershell
-$GenericInboundCIIdMethod = Initialize-okclientGenericInboundCIIdMethod  -Type null `
- -CaseInsensitive null
+$GenericInboundCIIdMethod = Initialize-okclientGenericInboundCIIdMethod  -Attributes null `
+ -Type null `
+ -CaseInsensitive null `
+ -Attribute null `
+ -Modifiers null `
+ -TempID null `
+ -OutgoingRelation null `
+ -PredicateID null `
+ -Inner null
 ```
 
 - Convert the resource to JSON
