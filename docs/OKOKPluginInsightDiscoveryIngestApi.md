@@ -35,7 +35,7 @@ $Context = "MyContext" # String |
 $Version = "MyVersion" # String | 
 $ContentType = "MyContentType" # String |  (optional)
 $ContentDisposition = "MyContentDisposition" # String |  (optional)
-$Headers = @{ key_example = ... } # System.Collections.Hashtable |  (optional)
+$Headers = @{ key_example = "MyInner" } # System.Collections.Hashtable |  (optional)
 $Length = 789 # Int64 |  (optional)
 $Name = "MyName" # String |  (optional)
 $FileName = "MyFileName" # String |  (optional)
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
  **Version** | **String**|  | 
  **ContentType** | **String**|  | [optional] 
  **ContentDisposition** | **String**|  | [optional] 
- **Headers** | [**System.Collections.Hashtable**](System.Collections.Hashtable.md)|  | [optional] 
+ **Headers** | [**System.Collections.Hashtable**](Map.md)|  | [optional] 
  **Length** | **Int64**|  | [optional] 
  **Name** | **String**|  | [optional] 
  **FileName** | **String**|  | [optional] 
